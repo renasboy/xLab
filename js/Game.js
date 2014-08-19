@@ -1,0 +1,128 @@
+Game.Game = function (game) {
+    this.currentLevel = 1;
+    this.MaxLevels = 6;
+    this.counter = 0;
+};
+
+Game.Game.prototype = {
+	create: function () {
+        this.gameLost = false;
+        this.gameWon = false;
+        this.done = {};
+
+        this.game.stage.backgroundColor = 0xdddddd;
+        this.game.add.tileSprite(0, 0, this.game.width, this.game.height, 'bg');
+        this.game.add.image(this.game.width - 150, 10, 'score_level');
+        this.game.add.image(0, this.game.height - 37, 'rolling');
+
+        this.level = new Game.Level(this.game, this.currentLevel)
+
+        this.tubes = this.game.add.group();
+        for (var item in this.level.tubes) {
+            this.tubes.add(new Game.Tube(this.game, this.level.tubes[item].type, this.level.tubes[item].x, this.level.maxTubeFill));
+        }
+
+        this.bottles = [];
+        this.bottles[1] = new Game.Bottle(this.game, 'primary1', this.game.width / 4,     this.game.height / 4);
+        this.bottles[2] = new Game.Bottle(this.game, 'primary2', this.game.width / 4 * 2, this.game.height / 4 * 2);
+        this.bottles[3] = new Game.Bottle(this.game, 'primary3', this.game.width / 4 * 3, this.game.height / 4 * 3);
+
+        this.emitters = [];
+        this.emitters[1] = this.bottles[1].emitter;
+        this.emitters[2] = this.bottles[2].emitter;
+        this.emitters[3] = this.bottles[3].emitter;
+        
+        this.cursors = this.game.input.keyboard.createCursorKeys();
+
+        var style = { font: '32px Dosis-Bold', fill: '#fff', align: 'center' };
+        this.counterText = this.game.add.text(this.game.width - 50, 20, '' + this.counter, style);
+        this.levelText = this.game.add.text(this.game.width - 50, 60, '' + this.currentLevel, style);
+	},
+    fillTube: function (obj1, obj2) {
+        obj2.destroy();
+        if (!obj1.canFill()) {
+            return;
+        }
+        obj1.fill(obj2.key);
+        this.counter += this.level.maxTubeFill;
+        this.checkGameOver();
+    },
+	update: function () {
+
+        if (this.gameLost || this.gameWon) {
+            return;
+        }
+
+        this.game.physics.arcade.collide(this.tubes);
+        this.game.physics.arcade.collide(this.tubes, this.emitters, this.fillTube, null, this);
+
+        if (this.game.device.desktop) {
+            if (this.cursors.left.isDown) {
+                this.bottles[1].drop();
+            }
+            else if (this.cursors.right.isDown){
+                this.bottles[3].drop();
+            }
+
+            if (this.cursors.up.isDown) {
+                this.bottles[2].drop();
+            }
+            else if (this.cursors.down.isDown) {
+                this.bottles[2].drop();
+            }
+        }
+        this.counterText.text = '' + this.counter;
+	},
+    checkGameOver: function () {
+
+        var canFill = {};
+        for (var item in this.level.colors) {
+            if (this.tubes.iterate('finalColor', this.level.colors[item].color, Phaser.Group.RETURN_TOTAL)) {
+                this.done['result' + item] = true;
+            }
+            else {
+                this.tubes.forEach(function (obj) {
+                    if (obj.canFillWith(this.level.colors[item].color)) {
+                        canFill['result' + item] = true;
+                    }
+                }, this);
+            }
+        }
+
+        if (Object.keys(this.done).length == this.level.colors.length) {
+            this.gameWon = true;
+            this.gameOver();
+        }
+        else if (Object.keys(this.done).length + Object.keys(canFill).length < this.level.colors.length) {
+            this.gameLost = true;
+            this.gameOver();
+        }
+    },
+    gameOver: function () {
+        this.level.hideInfo();
+
+        if (this.gameWon) {
+            if (this.currentLevel == this.MaxLevels) { 
+                this.level.gameWon();
+                this.input.onDown.add(this.quitGame, this);
+                return;
+            }
+
+            this.level.levelComplete();
+            this.input.onDown.add(this.nextLevel, this);
+        }
+        else {
+            this.level.gameLost();
+            this.input.onDown.add(this.quitGame, this);
+        }
+    },
+    nextLevel: function () {
+        this.currentLevel++;
+		this.state.start('Game');
+    },
+	quitGame: function () {
+        this.counter = 0;
+        this.currentLevel = 1;
+		this.state.start('MainMenu');
+	}
+};
