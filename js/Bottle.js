@@ -4,7 +4,7 @@ Game.Bottle = function (game, bottle, xBottle, yButton) {
     this.yButton = yButton;
     this.game = game;
 
-    this.maxParticles = 50;
+    this.maxParticles = 20;
 
     this.bottleSize = 142;
     this.buttonSize = 142;
@@ -49,7 +49,7 @@ Game.Bottle.prototype.build = function () {
 
 Game.Bottle.prototype.drop = function () {
     if (this.game.time.now < this.dropTime ||
-        this.maxParticle <= 0) {
+        this.maxParticles <= 0) {
         return;
     }
     this.emitter.emitParticle();

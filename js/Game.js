@@ -18,7 +18,7 @@ Game.Game.prototype = {
         this.game.add.image(this.game.width - 150, 10, 'score_level');
         this.rolling = this.game.add.sprite(0, this.game.height - 37, 'rolling_animation');
         this.rolling.animations.add('roll');
-        this.rolling.animations.play('roll', 20, true);
+        this.rolling.animations.play('roll', 10, true);
 
         this.level = new Game.Level(this.game, this.currentLevel)
 
