@@ -10,10 +10,15 @@ Game.Game.prototype = {
         this.gameWon = false;
         this.done = {};
 
+        this.gameAudio = this.game.add.audio('game');
+        this.gameAudio.play('', 0, 1, true);
+
         this.game.stage.backgroundColor = 0xdddddd;
         this.game.add.tileSprite(0, 0, this.game.width, this.game.height, 'bg');
         this.game.add.image(this.game.width - 150, 10, 'score_level');
-        this.game.add.image(0, this.game.height - 37, 'rolling');
+        this.rolling = this.game.add.sprite(0, this.game.height - 37, 'rolling_animation');
+        this.rolling.animations.add('roll');
+        this.rolling.animations.play('roll', 20, true);
 
         this.level = new Game.Level(this.game, this.currentLevel)
 
@@ -99,6 +104,7 @@ Game.Game.prototype = {
         }
     },
     gameOver: function () {
+        this.gameAudio.stop();
         this.level.hideInfo();
 
         if (this.gameWon) {

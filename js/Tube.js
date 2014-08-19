@@ -1,5 +1,5 @@
 Game.Tube = function (game, tube, x, maxFill) {
-
+    
     this.imgFill = 'fill_0';
     this.imgMask = tube + '_mask';
     this.imgTube = tube;
@@ -33,6 +33,8 @@ Game.Tube = function (game, tube, x, maxFill) {
 
     this.colorWheel = new Game.ColorWheel(this.game);
 
+    this.dropAudio = this.game.add.audio('drop');
+
     this.build();
 
     return this;
@@ -43,7 +45,7 @@ Game.Tube.prototype.constructor = Game.Tube;
 
 Game.Tube.prototype.build = function () {
     this.game.physics.enable(this, Phaser.Physics.ARCADE);
-    this.body.setSize(30, this.size, this.size / 2 - 15, 0); //collision area
+    this.body.setSize(20, 5, this.size / 2 - 10, 0); //collision area
     this.body.velocity.x = 200;
     this.body.bounce = new Phaser.Pointer(0, 0);
     // bounce while moving right
@@ -68,6 +70,7 @@ Game.Tube.prototype.fill = function (color) {
     var diff = this.size - 6 - this.dropFill * this.colors.length;
     this.bitmap.alphaMask(this.imgFill, this.imgMask, new Phaser.Rectangle(0, diff, this.size, this.size));
     this.bitmap.alphaMask(this.bitmap, this.imgTube);
+    this.dropAudio.play();
     if (this.colors.length == this.maxColors) {
         this.finalColor = this.currentColor;
         this.full = true;

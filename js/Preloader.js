@@ -10,6 +10,7 @@ Game.Preloader.prototype = {
         this.load.image('bg', 'img/bg.png');
         this.load.image('score_level', 'img/score_level.png');
         this.load.image('rolling', 'img/rolling.png');
+        this.load.spritesheet('rolling_animation', 'img/rolling_animation.png', 1200, 37, 6);
         this.load.image('game_over', 'img/game_over.png');
         this.load.image('game_won', 'img/game_won.png');
         this.load.image('level_complete', 'img/level_complete.png');
@@ -47,6 +48,11 @@ Game.Preloader.prototype = {
         this.load.image('fill_10', 'img/fill_10.png');
         this.load.image('fill_11', 'img/fill_11.png');
         this.load.image('fill_12', 'img/fill_12.png');
+        this.game.load.audio('drop', 'snd/drop.mp3');
+        this.game.load.audio('bottle', 'snd/bottle.mp3');
+        this.game.load.audio('click', 'snd/click.mp3');
+        this.game.load.audio('game', 'snd/game.mp3');
+        this.game.load.audio('menu', 'snd/menu.mp3');
 	},
 	create: function () {
 		this.state.start('MainMenu');

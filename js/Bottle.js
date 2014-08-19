@@ -18,6 +18,8 @@ Game.Bottle = function (game, bottle, xBottle, yButton) {
     this.imgButton = bottle + '_button';
     this.imgParticle = bottle + '_particle';
 
+    this.bottleAudio = this.game.add.audio('bottle');
+
     this.build();
 
     return this;
@@ -38,6 +40,7 @@ Game.Bottle.prototype.build = function () {
     this.emitter.makeParticles(this.imgParticle, [0], this.maxParticles, true, false); // another true for world collision
     this.emitter.minParticleSpeed.setTo(0, this.dropSpeed);
     this.emitter.maxParticleSpeed.setTo(0, this.dropSpeed);
+    this.emitter.setSize(20, 5, this.size / 2 - 10, this.size - 5); //collision area
     this.emitter.setRotation(0, 0);
     this.emitter.lifespan = 0;
     this.emitter.emitX += this.bottleSize / 2 - this.dropSize / 3;
@@ -53,4 +56,5 @@ Game.Bottle.prototype.drop = function () {
     this.maxParticles--;
     this.counterText.text = this.maxParticles + '';
     this.dropTime = this.game.time.now + this.dropTimeout;
+    this.bottleAudio.play();
 };

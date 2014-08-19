@@ -18,6 +18,13 @@ Game.Boot.prototype = {
             //this.scale.setScreenSize(true);
         }
         else {
+            //this.game.scale.scaleMode = Phaser.ScaleManager.EXACT_FIT;
+            this.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
+            this.game.scale.setScreenSize();
+            this.game.scale.refresh();
+            //this.scale.enterIncorrectOrientation.add(this.enterIncorrectOrientation, this);
+            //this.scale.leaveIncorrectOrientation.add(this.leaveIncorrectOrientation, this);
+            /*
             this.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
             this.scale.minWidth = 480;
             this.scale.minHeight = 260;
@@ -27,10 +34,15 @@ Game.Boot.prototype = {
             this.scale.pageAlignVertically = true;
             this.scale.forceOrientation(true, false);
             //this.scale.hasResized.add(this.gameResized, this);
-            //this.scale.enterIncorrectOrientation.add(this.enterIncorrectOrientation, this);
-            //this.scale.leaveIncorrectOrientation.add(this.leaveIncorrectOrientation, this);
             //this.scale.setScreenSize(true);
+            */
         }
         this.state.start('Preloader');
+    },
+    enterIncorrectOrientation: function () {
+        document.getElementById('orientation').style.display = 'block';
+    },
+    leaveIncorrectOrientation: function () {
+        document.getElementById('orientation').style.display = 'none';
     }
 };

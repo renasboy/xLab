@@ -5,6 +5,9 @@ Game.MainMenu.prototype = {
 
         this.game.stage.backgroundColor = 0x000000;
 
+        this.menuAudio = this.game.add.audio('menu');
+        this.menuAudio.play('', 0, 1, true);
+
         this.game.add.tileSprite(0, 0, this.game.width, this.game.height, 'bg');
         this.game.add.image(this.game.world.centerX - 125, this.game.world.centerY - 125, 'logo');
         this.game.add.image(this.game.world.centerX - 128, this.game.world.centerY + 125 + 20, 'start');
@@ -12,8 +15,11 @@ Game.MainMenu.prototype = {
         this.enterKey = this.game.input.keyboard.addKey(Phaser.Keyboard.ENTER);
 
         this.input.onDown.addOnce(this.startGame, this);
+        this.clickAudio = this.game.add.audio('click');
 	},
 	startGame: function (pointer) {
+        this.menuAudio.stop();
+        this.clickAudio.play();
 		this.state.start('Game');
 	},
     update: function () {
