@@ -1,10 +1,17 @@
 Game.Game = function (game) {
+    this.maxLevel = localStorage.getItem('max_level') ? localStorage.getItem('max_level') : 1;
     this.currentLevel = 1;
     this.MaxLevels = 6;
     this.counter = 0;
 };
 
 Game.Game.prototype = {
+    init: function (level) {
+        if (!level) {
+            return;
+        }
+        this.currentLevel = level;
+    },
 	create: function () {
         this.gameLost = false;
         this.gameWon = false;
@@ -124,6 +131,9 @@ Game.Game.prototype = {
     },
     nextLevel: function () {
         this.currentLevel++;
+        if (this.currentLevel > this.maxLevel) {
+            localStorage.setItem('max_level', this.currentLevel);
+        }
 		this.state.start('Game');
     },
 	quitGame: function () {

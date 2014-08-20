@@ -20,7 +20,7 @@ Game.MainMenu.prototype = {
 	startGame: function (pointer) {
         this.menuAudio.stop();
         this.clickAudio.play();
-		this.state.start('Game');
+		this.state.start('LevelMenu');
 	},
     update: function () {
         if (this.enterKey.isDown) {
