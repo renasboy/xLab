@@ -9,13 +9,13 @@ Game.Boot.prototype = {
     create: function () {
         if (this.game.device.desktop) {
             this.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
-            this.scale.minWidth = 256;
-            this.scale.minHeight = 196;
-            this.scale.maxWidth = 512;
-            this.scale.maxHeight = 384;
+            this.scale.minWidth = 568;
+            this.scale.minHeight = 320;
+            this.scale.maxWidth = 852;
+            this.scale.maxHeight = 480;
             this.scale.pageAlignHorizontally = true;
             this.scale.pageAlignVertically = true;
-            //this.scale.setScreenSize(true);
+            this.scale.setScreenSize(true);
         }
         else {
             //this.game.scale.scaleMode = Phaser.ScaleManager.EXACT_FIT;

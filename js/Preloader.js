@@ -26,6 +26,8 @@ Game.Preloader.prototype = {
         this.load.image('primary1_button', 'img/primary1_button.png');
         this.load.image('primary2_button', 'img/primary2_button.png');
         this.load.image('primary3_button', 'img/primary3_button.png');
+        this.load.image('button', 'img/button.png');
+        this.load.image('button_mask', 'img/button_mask.png');
         this.load.image('primary1_particle', 'img/primary1_particle.png');
         this.load.image('primary2_particle', 'img/primary2_particle.png');
         this.load.image('primary3_particle', 'img/primary3_particle.png');

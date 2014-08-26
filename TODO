@@ -1,0 +1,15 @@
+- count the drops animation
+- level maker
+- make levels
+- little rat
+- blur all while showing message
+- mute button, pause button
+- game over when paint finishes
+- debug tube body collision
+
+- sfx
+    - game over
+    - level complete
+    - game won
+- resolution/scalable/responsive
+- callback high score

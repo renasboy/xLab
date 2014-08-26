@@ -47,9 +47,9 @@ Game.Level.prototype.levels = [
 
     {
         name: 'Level 1',
-        description: 'Fill one tube with blue',
-        description2: '',
         maxTubeFill: 1,
+        drops: 20,
+        speed: 200,
         colors: [
             { color: 3 }
         ],
@@ -62,9 +62,9 @@ Game.Level.prototype.levels = [
 
     {
         name: 'Level 2',
-        description: 'Fill one tube with yellow',
-        description2: '',
         maxTubeFill: 1,
+        drops: 20,
+        speed: 200,
         colors: [
             { color: 2 }
         ],
@@ -77,9 +77,9 @@ Game.Level.prototype.levels = [
 
     {
         name: 'Level 3',
-        description: 'Fill one tube with yellow,',
-        description2: 'one with blue and one with red',
         maxTubeFill: 1,
+        drops: 20,
+        speed: 200,
         colors: [
             { color: 1 },
             { color: 2 },
@@ -95,9 +95,9 @@ Game.Level.prototype.levels = [
 
     {
         name: 'Level 4',
-        description: 'Fill one tube with yellow',
-        description2: '',
         maxTubeFill: 2,
+        drops: 20,
+        speed: 200,
         colors: [
             { color: 2 }
         ],
@@ -110,9 +110,9 @@ Game.Level.prototype.levels = [
 
     {
         name: 'Level 5',
-        description: 'Fill one tube with yellow',
-        description2: ' and one with red',
         maxTubeFill: 2,
+        drops: 20,
+        speed: 200,
         colors: [
             { color: 1 },
             { color: 2 }
@@ -126,9 +126,9 @@ Game.Level.prototype.levels = [
 
     {
         name: 'Level 6',
-        description: 'Fill one tube with green',
-        description2: '',
         maxTubeFill: 2,
+        drops: 20,
+        speed: 200,
         colors: [
             { color: 4 }
         ],

@@ -31,13 +31,13 @@ Game.Game.prototype = {
 
         this.tubes = this.game.add.group();
         for (var item in this.level.tubes) {
-            this.tubes.add(new Game.Tube(this.game, this.level.tubes[item].type, this.level.tubes[item].x, this.level.maxTubeFill));
+            this.tubes.add(new Game.Tube(this.game, this.level.tubes[item].type, this.level.tubes[item].x, this.level.speed, this.level.maxTubeFill));
         }
 
         this.bottles = [];
-        this.bottles[1] = new Game.Bottle(this.game, 'primary1', this.game.width / 4,     this.game.height / 4);
-        this.bottles[2] = new Game.Bottle(this.game, 'primary2', this.game.width / 4 * 2, this.game.height / 4 * 2);
-        this.bottles[3] = new Game.Bottle(this.game, 'primary3', this.game.width / 4 * 3, this.game.height / 4 * 3);
+        this.bottles[1] = new Game.Bottle(this.game, 'primary1', this.level.drops, this.game.width / 4,     this.game.height / 4 * 3);
+        this.bottles[2] = new Game.Bottle(this.game, 'primary2', this.level.drops, this.game.width / 4 * 2, this.game.height / 4 * 2);
+        this.bottles[3] = new Game.Bottle(this.game, 'primary3', this.level.drops, this.game.width / 4 * 3, this.game.height / 4);
 
         this.emitters = [];
         this.emitters[1] = this.bottles[1].emitter;

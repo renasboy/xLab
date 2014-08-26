@@ -1,10 +1,10 @@
-Game.Bottle = function (game, bottle, xBottle, yButton) {
+Game.Bottle = function (game, bottle, drops, xBottle, yButton) {
 
     this.xBottle = xBottle;
     this.yButton = yButton;
     this.game = game;
 
-    this.maxParticles = 20;
+    this.maxParticles = drops;
 
     this.bottleSize = 142;
     this.buttonSize = 142;
@@ -15,7 +15,9 @@ Game.Bottle = function (game, bottle, xBottle, yButton) {
     this.dropSpeed = 400;
 
     this.imgBottle = bottle;
-    this.imgButton = bottle + '_button';
+    this.imgButton = 'button';
+    this.imgButtonMask = 'button_mask';
+    this.imgFill = 'fill_' + bottle.replace(/primary/, '');
     this.imgParticle = bottle + '_particle';
 
     this.bottleAudio = this.game.add.audio('bottle');
@@ -29,10 +31,17 @@ Game.Bottle.prototype.constructor = Game.Bottle;
 
 Game.Bottle.prototype.build = function () {
     this.bottle = this.game.add.sprite(this.xBottle - this.bottleSize / 2, 0, this.imgBottle);
-    this.button = this.game.add.button(0, this.yButton - this.buttonSize / 2, this.imgButton, this.drop, this);
+
+    this.bitmap = this.game.make.bitmapData(this.buttonSize, this.buttonSize);
+    this.bitmap.alphaMask(this.imgFill, this.imgButtonMask, new Phaser.Rectangle(0, 10, this.buttonSize, this.buttonSize));
+    this.bitmap.alphaMask(this.bitmap, this.imgButton);
+
+    this.button = this.game.add.sprite(this.game.width - this.buttonSize, this.yButton - this.buttonSize / 2, this.bitmap);
+    this.button.inputEnabled = true;
+    this.button.events.onInputDown.add(this.drop, this);
 
     var style = { font: '24px Dosis-Bold', fill: '#fff', align: 'center' };
-    this.counterText = this.game.add.text(this.buttonSize, this.yButton - this.buttonSize / 4, '' + this.maxParticles, style);
+    this.counterText = this.game.add.text(this.game.width - this.buttonSize - 50, this.yButton - this.buttonSize / 4, '' + this.maxParticles, style);
 
     // create emitters
     this.emitter = this.game.add.emitter(0, 0, 1);
@@ -52,6 +61,11 @@ Game.Bottle.prototype.drop = function () {
         this.maxParticles <= 0) {
         return;
     }
+    // TODO try animation while drop 10 - 75
+    //var diff = this.size - 6 - this.dropFill * this.colors.length;
+    //this.bitmap = this.game.make.bitmapData(this.buttonSize, this.buttonSize);
+    this.bitmap.alphaMask(this.imgFill, this.imgButtonMask, new Phaser.Rectangle(0, 20, this.buttonSize, this.buttonSize));
+    this.bitmap.alphaMask(this.bitmap, this.imgButton);
     this.emitter.emitParticle();
     this.maxParticles--;
     this.counterText.text = this.maxParticles + '';

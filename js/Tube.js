@@ -1,4 +1,4 @@
-Game.Tube = function (game, tube, x, maxFill) {
+Game.Tube = function (game, tube, x, speed, maxFill) {
     
     this.imgFill = 'fill_0';
     this.imgMask = tube + '_mask';
@@ -9,6 +9,7 @@ Game.Tube = function (game, tube, x, maxFill) {
     this.currentColor = 0;
     this.finalcolor = 0;
     this.alive = true;
+    this.speed = speed;
 
     this.rollingPosition = 32;
 
@@ -46,7 +47,7 @@ Game.Tube.prototype.constructor = Game.Tube;
 Game.Tube.prototype.build = function () {
     this.game.physics.enable(this, Phaser.Physics.ARCADE);
     this.body.setSize(20, 5, this.size / 2 - 10, 0); //collision area
-    this.body.velocity.x = 200;
+    this.body.velocity.x = this.speed;
     this.body.bounce = new Phaser.Pointer(0, 0);
     // bounce while moving right
     //var bounce = this.game.add.tween(this);
