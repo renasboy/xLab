@@ -1,10 +1,9 @@
-- mute button, pause button
-- use enter on level menu and start
 - blur all while showing message
 - game over when paint finishes
 - debug tube body collision
 - level maker
 - make levels
+- use enter on start button
 - sfx
     - get new
     - game over

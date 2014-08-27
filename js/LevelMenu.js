@@ -12,6 +12,8 @@ Game.LevelMenu.prototype = {
 
         this.game.add.tileSprite(0, 0, this.game.width, this.game.height, 'bg');
 
+        this.enterKey = this.game.input.keyboard.addKey(Phaser.Keyboard.ENTER);
+
         this.build();
 
         this.clickAudio = this.game.add.audio('click');
@@ -55,5 +57,8 @@ Game.LevelMenu.prototype = {
 		this.state.start('Game', true, false, button.level);
 	},
     update: function () {
+        if (this.enterKey.isDown) {
+            this.state.start('Game', true, false, this.maxLevel);
+        }
     }
 };
