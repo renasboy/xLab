@@ -1,9 +1,7 @@
-- blur all while showing message
-- game over when paint finishes
-- debug tube body collision
 - level maker
 - make levels
 - use enter on start button
+- game over when paint finishes / collission, or getting out of world
 - sfx
     - get new
     - game over

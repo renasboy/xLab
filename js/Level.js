@@ -18,9 +18,14 @@ Game.Level = function (game, level) {
 
 Game.Level.prototype.hideInfo = function () {
     this.game.add.tween(this.levelImg).to( { alpha: 0 }, 2000, Phaser.Easing.Linear.None, true);
+    this.game.add.tween(this.levelBg).to( { alpha: 0 }, 2000, Phaser.Easing.Linear.None, true);
 };
 
 Game.Level.prototype.showInfo = function (img, hide) {
+    var bg = this.game.add.bitmapData(this.game.width, this.game.height);
+    bg.fill(0, 0, 0, 0.6);
+    this.levelBg = this.game.add.sprite(0, 0, bg);
+
     this.levelImg = this.game.add.image(0, 0, img);
     this.levelImg.x = this.game.world.centerX - (this.levelImg.width / 2);
     this.levelImg.y = this.game.world.centerY - (this.levelImg.height / 2);

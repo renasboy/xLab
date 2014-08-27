@@ -10,6 +10,8 @@ Game.Bottle = function (game, bottle, drops, xBottle, yButton) {
     this.buttonSize = 142;
     this.dropSize = 60;
 
+    this.empty = false;
+
     this.dropTime = 0;
     this.dropTimeout = 300;
     this.dropSpeed = 400;
@@ -49,16 +51,19 @@ Game.Bottle.prototype.build = function () {
     this.emitter.makeParticles(this.imgParticle, [0], this.maxParticles, true, false); // another true for world collision
     this.emitter.minParticleSpeed.setTo(0, this.dropSpeed);
     this.emitter.maxParticleSpeed.setTo(0, this.dropSpeed);
-    this.emitter.setSize(20, 5, this.size / 2 - 10, this.size - 5); //collision area
+    this.emitter.setSize(1, 1);
     this.emitter.setRotation(0, 0);
     this.emitter.lifespan = 0;
-    this.emitter.emitX += this.bottleSize / 2 - this.dropSize / 3;
+    this.emitter.emitX += this.bottleSize / 2 - this.dropSize / 4;
     this.emitter.emitY += this.bottleSize / 4 * 3;
 };
 
 Game.Bottle.prototype.drop = function () {
     if (this.game.time.now < this.dropTime ||
         this.maxParticles <= 0) {
+        if (this.maxParticles <= 0) {
+            this.empty = true;
+        }
         return;
     }
     // TODO try animation while drop 10 - 75

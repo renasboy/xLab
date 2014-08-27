@@ -60,6 +60,10 @@ Game.Game.prototype = {
         this.pauseButton = this.game.add.button(95, 100, 'pause', this.pauseGame, this);
         this.game.input.onDown.add(function () { if(this.game.paused) this.game.paused = false; }, this);
 	},
+    dropBottle: function (bottle) {
+        this.bottles[bottle].drop();
+        //this.checkGameOverBottle();
+    },
     fillTube: function (obj1, obj2) {
         obj2.destroy();
         if (!obj1.canFill()) {
@@ -67,7 +71,7 @@ Game.Game.prototype = {
         }
         obj1.fill(obj2.key);
         this.counter += this.level.maxTubeFill;
-        this.checkGameOver();
+        this.checkGameOverTube();
     },
     hitRat: function (obj1, obj2) {
         obj2.destroy();
@@ -87,22 +91,30 @@ Game.Game.prototype = {
 
         if (this.game.device.desktop) {
             if (this.cursors.left.isDown) {
-                this.bottles[1].drop();
+                this.dropBottle(1);
             }
             else if (this.cursors.right.isDown){
-                this.bottles[3].drop();
+                this.dropBottle(3);
             }
 
             if (this.cursors.up.isDown) {
-                this.bottles[2].drop();
+                this.dropBottle(2);
             }
             else if (this.cursors.down.isDown) {
-                this.bottles[2].drop();
+                this.dropBottle(2);
             }
         }
         this.counterText.text = 'Score: ' + this.counter;
 	},
-    checkGameOver: function () {
+    checkGameOverBottle: function () {
+        if (this.bottles[1].empty ||
+            this.bottles[2].empty ||
+            this.bottles[3].empty) {
+            this.gameLost = true;
+            this.gameOver();
+        }
+    },
+    checkGameOverTube: function () {
 
         var canFill = {};
         for (var item in this.level.colors) {
