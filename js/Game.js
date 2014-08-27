@@ -57,7 +57,8 @@ Game.Game.prototype = {
         this.levelText = this.game.add.text(20, 60, 'Level: ' + this.currentLevel, style);
 
         this.muteButton = this.game.add.button(10, 100, 'mute', this.muteMusic, this);
-        //this.game.add.button(95, 100, 'pause', this.pauseGame, this);
+        this.pauseButton = this.game.add.button(95, 100, 'pause', this.pauseGame, this);
+        this.game.input.onDown.add(function () { if(this.game.paused) this.game.paused = false; }, this);
 	},
     fillTube: function (obj1, obj2) {
         obj2.destroy();
@@ -158,7 +159,7 @@ Game.Game.prototype = {
 		this.state.start('MainMenu');
 	},
     pauseGame: function () {
-        return;
+        this.game.paused = true;
     },
     muteMusic: function () {
         if (this.mute) {
