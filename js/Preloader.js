@@ -51,6 +51,9 @@ Game.Preloader.prototype = {
         this.load.image('fill_10', 'img/fill_10.png');
         this.load.image('fill_11', 'img/fill_11.png');
         this.load.image('fill_12', 'img/fill_12.png');
+        this.load.image('mute', 'img/button_audio_off.png');
+        this.load.image('unmute', 'img/button_audio_on.png');
+        this.load.image('pause', 'img/button_pause.png');
         this.game.load.audio('rat', 'snd/drop.mp3');
         this.game.load.audio('drop', 'snd/drop.mp3');
         this.game.load.audio('bottle', 'snd/bottle.mp3');

@@ -3,6 +3,7 @@ Game.Game = function (game) {
     this.currentLevel = 1;
     this.MaxLevels = 6;
     this.counter = 0;
+    this.mute = false;
 };
 
 Game.Game.prototype = {
@@ -22,7 +23,6 @@ Game.Game.prototype = {
 
         this.game.stage.backgroundColor = 0xdddddd;
         this.game.add.tileSprite(0, 0, this.game.width, this.game.height, 'bg');
-        this.game.add.image(this.game.width - 150, 10, 'score_level');
         this.rolling = this.game.add.sprite(0, this.game.height - 37, 'rolling_animation');
         this.rolling.animations.add('roll');
         this.rolling.animations.play('roll', 10, true);
@@ -52,8 +52,12 @@ Game.Game.prototype = {
         this.cursors = this.game.input.keyboard.createCursorKeys();
 
         var style = { font: '32px Dosis-Bold', fill: '#fff', align: 'center' };
-        this.counterText = this.game.add.text(this.game.width - 50, 20, '' + this.counter, style);
-        this.levelText = this.game.add.text(this.game.width - 50, 60, '' + this.currentLevel, style);
+        this.game.add.image(10, 10, 'score_level');
+        this.counterText = this.game.add.text(20, 20, 'Score: ' + this.counter, style);
+        this.levelText = this.game.add.text(20, 60, 'Level: ' + this.currentLevel, style);
+
+        this.muteButton = this.game.add.button(10, 100, 'mute', this.muteMusic, this);
+        //this.game.add.button(95, 100, 'pause', this.pauseGame, this);
 	},
     fillTube: function (obj1, obj2) {
         obj2.destroy();
@@ -95,7 +99,7 @@ Game.Game.prototype = {
                 this.bottles[2].drop();
             }
         }
-        this.counterText.text = '' + this.counter;
+        this.counterText.text = 'Score: ' + this.counter;
 	},
     checkGameOver: function () {
 
@@ -152,5 +156,21 @@ Game.Game.prototype = {
         this.counter = 0;
         this.currentLevel = 1;
 		this.state.start('MainMenu');
-	}
+	},
+    pauseGame: function () {
+        return;
+    },
+    muteMusic: function () {
+        if (this.mute) {
+            console.log('unmute');
+            this.gameAudio.resume();
+            this.mute = false;
+            this.muteButton.loadTexture('mute');
+            return;
+        }
+        console.log('mute');
+        this.gameAudio.pause();
+        this.mute = true; 
+        this.muteButton.loadTexture('unmute');
+    }
 };
