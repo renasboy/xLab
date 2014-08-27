@@ -49,10 +49,6 @@ Game.Tube.prototype.build = function () {
     this.body.setSize(20, 5, this.size / 2 - 10, 0); //collision area
     this.body.velocity.x = this.speed;
     this.body.bounce = new Phaser.Pointer(0, 0);
-    // bounce while moving right
-    //var bounce = this.game.add.tween(this);
-    //bounce.to({ y: this.y - 1 }, 300, Phaser.Easing.Bounce.In, true, 0, Number.MAX_VALUE, true);
-    //bounce.start();
 };
 
 Game.Tube.prototype.fill = function (color) {

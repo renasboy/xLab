@@ -1,19 +1,18 @@
-- count the drops animation
-- level maker
-- make levels
-- little rat
-- blur all while showing message
 - mute button, pause button
+- use enter on level menu and start
+- blur all while showing message
 - game over when paint finishes
 - debug tube body collision
-- use enter on level menu and start
-
+- level maker
+- make levels
 - sfx
+    - get new
     - game over
     - level complete
     - game won
-- resolution/scalable/responsive
 - callback high score
+- resolution/scalable/responsive (DONE?)
+- count the drops animation (BLOCKED)
 
 ###################################
 

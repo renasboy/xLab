@@ -34,6 +34,11 @@ Game.Game.prototype = {
             this.tubes.add(new Game.Tube(this.game, this.level.tubes[item].type, this.level.tubes[item].x, this.level.speed, this.level.maxTubeFill));
         }
 
+        this.rats = this.game.add.group();
+        for (var item in this.level.rats) {
+            this.rats.add(new Game.Rat(this.game, this.level.rats[item].type, this.level.rats[item].x, this.level.speed));
+        }
+
         this.bottles = [];
         this.bottles[1] = new Game.Bottle(this.game, 'primary1', this.level.drops, this.game.width / 4,     this.game.height / 4 * 3);
         this.bottles[2] = new Game.Bottle(this.game, 'primary2', this.level.drops, this.game.width / 4 * 2, this.game.height / 4 * 2);
@@ -59,6 +64,12 @@ Game.Game.prototype = {
         this.counter += this.level.maxTubeFill;
         this.checkGameOver();
     },
+    hitRat: function (obj1, obj2) {
+        obj2.destroy();
+        obj1.hit();
+        this.gameLost = true;
+        this.gameOver();
+    },
 	update: function () {
 
         if (this.gameLost || this.gameWon) {
@@ -67,6 +78,7 @@ Game.Game.prototype = {
 
         this.game.physics.arcade.collide(this.tubes);
         this.game.physics.arcade.collide(this.tubes, this.emitters, this.fillTube, null, this);
+        this.game.physics.arcade.collide(this.rats, this.emitters, this.hitRat, null, this);
 
         if (this.game.device.desktop) {
             if (this.cursors.left.isDown) {

@@ -31,6 +31,7 @@ Game.Preloader.prototype = {
         this.load.image('primary1_particle', 'img/primary1_particle.png');
         this.load.image('primary2_particle', 'img/primary2_particle.png');
         this.load.image('primary3_particle', 'img/primary3_particle.png');
+        this.load.image('rat1', 'img/rat1.png');
         this.load.image('tube1', 'img/tube1.png');
         this.load.image('tube2', 'img/tube2.png');
         this.load.image('tube3', 'img/tube3.png');
@@ -50,6 +51,7 @@ Game.Preloader.prototype = {
         this.load.image('fill_10', 'img/fill_10.png');
         this.load.image('fill_11', 'img/fill_11.png');
         this.load.image('fill_12', 'img/fill_12.png');
+        this.game.load.audio('rat', 'snd/drop.mp3');
         this.game.load.audio('drop', 'snd/drop.mp3');
         this.game.load.audio('bottle', 'snd/bottle.mp3');
         this.game.load.audio('click', 'snd/click.mp3');

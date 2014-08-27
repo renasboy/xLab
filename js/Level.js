@@ -57,6 +57,10 @@ Game.Level.prototype.levels = [
             { type: 'tube1', x: 32 },
             { type: 'tube2', x: 400 },
             { type: 'tube3', x: 700 }
+        ],
+        rats: [
+            { type: 'rat1', x: 200 },
+            { type: 'rat1', x: 550 }
         ]
     },
 
