@@ -126,6 +126,10 @@ Game.Level.prototype.levels = [
             { type: 'tube1', x: 32 },
             { type: 'tube2', x: 400 },
             { type: 'tube3', x: 700 }
+        ],
+        rats: [
+            { type: 'rat1', x: 200 },
+            { type: 'rat1', x: 550 }
         ]
     },
 
@@ -143,6 +147,10 @@ Game.Level.prototype.levels = [
             { type: 'tube1', x: 32 },
             { type: 'tube2', x: 400 },
             { type: 'tube3', x: 700 }
+        ],
+        rats: [
+            { type: 'rat1', x: 200 },
+            { type: 'rat1', x: 550 }
         ]
     },
 
@@ -159,6 +167,10 @@ Game.Level.prototype.levels = [
             { type: 'tube1', x: 32 },
             { type: 'tube2', x: 400 },
             { type: 'tube3', x: 700 }
+        ],
+        rats: [
+            { type: 'rat1', x: 200 },
+            { type: 'rat1', x: 550 }
         ]
     }, 
 
@@ -175,6 +187,10 @@ Game.Level.prototype.levels = [
             { type: 'tube1', x: 32 },
             { type: 'tube2', x: 400 },
             { type: 'tube3', x: 700 }
+        ],
+        rats: [
+            { type: 'rat1', x: 200 },
+            { type: 'rat1', x: 550 }
         ]
     }, 
 
@@ -190,6 +206,131 @@ Game.Level.prototype.levels = [
             { type: 'tube1', x: 32 },
             { type: 'tube2', x: 400 },
             { type: 'tube3', x: 700 }
+        ],
+        rats: [
+            { type: 'rat1', x: 200 },
+            { type: 'rat1', x: 550 }
+        ]
+    },
+
+    {
+        name: 'Level 7',
+        maxTubeFill: 2,
+        drops: 20,
+        speed: 200,
+        colors: [
+            { color: 5 }
+        ],
+        tubes: [
+            { type: 'tube1', x: 32 },
+            { type: 'tube2', x: 400 },
+            { type: 'tube3', x: 700 }
+        ],
+        rats: [
+            { type: 'rat1', x: 200 },
+            { type: 'rat1', x: 550 }
+        ]
+    },
+
+    {
+        name: 'Level 8',
+        maxTubeFill: 2,
+        drops: 20,
+        speed: 200,
+        colors: [
+            { color: 6 }
+        ],
+        tubes: [
+            { type: 'tube1', x: 32 },
+            { type: 'tube2', x: 400 },
+            { type: 'tube3', x: 700 }
+        ],
+        rats: [
+            { type: 'rat1', x: 200 },
+            { type: 'rat1', x: 550 }
+        ]
+    },
+
+    {
+        name: 'Level 9',
+        maxTubeFill: 2,
+        drops: 20,
+        speed: 200,
+        colors: [
+            { color: 4 },
+            { color: 5 },
+            { color: 6 },
+        ],
+        tubes: [
+            { type: 'tube1', x: 32 },
+            { type: 'tube2', x: 400 },
+            { type: 'tube3', x: 700 }
+        ],
+        rats: [
+            { type: 'rat1', x: 200 },
+            { type: 'rat1', x: 550 }
+        ]
+    },
+
+    {
+        name: 'Level 10',
+        maxTubeFill: 3,
+        drops: 20,
+        speed: 200,
+        colors: [
+            { color: 1 },
+            { color: 2 },
+            { color: 3 }
+        ],
+        tubes: [
+            { type: 'tube1', x: 32 },
+            { type: 'tube2', x: 400 },
+            { type: 'tube3', x: 700 }
+        ],
+        rats: [
+            { type: 'rat1', x: 200 },
+            { type: 'rat1', x: 550 }
+        ]
+    },
+
+    {
+        name: 'Level 11',
+        maxTubeFill: 4,
+        drops: 20,
+        speed: 200,
+        colors: [
+            { color: 1 },
+            { color: 2 },
+            { color: 3 }
+        ],
+        tubes: [
+            { type: 'tube1', x: 32 },
+            { type: 'tube2', x: 400 },
+            { type: 'tube3', x: 700 }
+        ],
+        rats: [
+            { type: 'rat1', x: 200 },
+            { type: 'rat1', x: 550 }
+        ]
+    },
+
+    {
+        name: 'Level 12',
+        maxTubeFill: 4,
+        drops: 20,
+        speed: 200,
+        colors: [
+            { color: 4 },
+            { color: 7 }
+        ],
+        tubes: [
+            { type: 'tube1', x: 32 },
+            { type: 'tube2', x: 400 },
+            { type: 'tube3', x: 700 }
+        ],
+        rats: [
+            { type: 'rat1', x: 200 },
+            { type: 'rat1', x: 550 }
         ]
     }
 ];

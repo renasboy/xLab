@@ -1,7 +1,7 @@
 Game.Game = function (game) {
     this.maxLevel = localStorage.getItem('max_level') ? localStorage.getItem('max_level') : 1;
     this.currentLevel = 1;
-    this.MaxLevels = 6;
+    this.MaxLevels = 12;
     this.counter = 0;
     this.mute = false;
 };

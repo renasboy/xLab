@@ -24,7 +24,7 @@ Game.LevelMenu.prototype = {
 	},
     build: function () {
         // TODO this should be taken from Game.Level
-        var nLevels = 6;
+        var nLevels = 12;
         var nColumns = 4;
         var nRows = Math.round(nLevels / nColumns);
         var columnWidth = this.game.width / (nColumns + 1);
