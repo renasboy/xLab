@@ -4,6 +4,7 @@ Game.Bottle = function (game, bottle, drops, xBottle, yButton) {
     this.yButton = yButton;
     this.game = game;
 
+    this.currentParticles = drops;
     this.maxParticles = drops;
 
     this.bottleSize = 142;
@@ -43,7 +44,7 @@ Game.Bottle.prototype.build = function () {
     this.button.events.onInputDown.add(this.drop, this);
 
     var style = { font: '24px Dosis-Bold', fill: '#fff', align: 'center' };
-    this.counterText = this.game.add.text(this.game.width - this.buttonSize - 50, this.yButton - this.buttonSize / 4, '' + this.maxParticles, style);
+    this.counterText = this.game.add.text(this.game.width - this.buttonSize - 50, this.yButton - this.buttonSize / 4, '' + this.currentParticles, style);
 
     // create emitters
     this.emitter = this.game.add.emitter(0, 0, 1);
@@ -60,20 +61,18 @@ Game.Bottle.prototype.build = function () {
 
 Game.Bottle.prototype.drop = function () {
     if (this.game.time.now < this.dropTime ||
-        this.maxParticles <= 0) {
-        if (this.maxParticles <= 0) {
+        this.currentParticles <= 0) {
+        if (this.currentParticles <= 0) {
             this.empty = true;
         }
         return;
     }
-    // TODO try animation while drop 10 - 75
-    //var diff = this.size - 6 - this.dropFill * this.colors.length;
-    //this.bitmap = this.game.make.bitmapData(this.buttonSize, this.buttonSize);
-    this.bitmap.alphaMask(this.imgFill, this.imgButtonMask, new Phaser.Rectangle(0, 20, this.buttonSize, this.buttonSize));
+    var diff = (65 / this.maxParticles) * this.currentParticles;
+    this.bitmap.alphaMask(this.imgFill, this.imgButtonMask, new Phaser.Rectangle(0, 75 - diff, this.buttonSize, this.buttonSize));
     this.bitmap.alphaMask(this.bitmap, this.imgButton);
     this.emitter.emitParticle();
-    this.maxParticles--;
-    this.counterText.text = this.maxParticles + '';
+    this.currentParticles--;
+    this.counterText.text = this.currentParticles + '';
     this.dropTime = this.game.time.now + this.dropTimeout;
     this.bottleAudio.play();
 };

@@ -1,4 +1,3 @@
-- use enter on start button
 - game over when paint finishes / collission, or getting out of world
 - sfx
     - get new
@@ -7,8 +6,8 @@
     - game won
 - callback high score
 - resolution/scalable/responsive (DONE?)
-- count the drops animation (BLOCKED)
 - make even more levels
+- maybe use more states for LevelComplete and GameWon
 
 ###################################
 
