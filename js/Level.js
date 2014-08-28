@@ -7,11 +7,11 @@ Game.Level = function (game, level) {
     this.img = 'level';
     this.levelImg = null;
 
+    this.nLevels = this.levels.length - 1; // zero is no level
+
     this.imgGameover = 'game_over';
     this.imgGameWon = 'game_won';
     this.imgLevelComplete = 'level_complete';
-
-    this.showLevelInfo();
 
     return this;
 };
@@ -66,16 +66,6 @@ Game.Level.prototype.showLevelInfo = function () {
     for (item in this.levelTubes) {
         var gutter = (this.levelImg.width - 128 * this.levelTubes.length) / (this.levelTubes.length + 1);
         this.levelTubes[item].x = this.levelImg.x + gutter + (item * (128 + gutter));
-    }
-    this.game.time.events.add(Phaser.Timer.SECOND * 2, this.hideLevelInfo, this); 
-};
-
-Game.Level.prototype.hideLevelInfo = function () {
-    this.hideInfo();
-    this.game.add.tween(this.levelText).to( { alpha: 0 }, 2000, Phaser.Easing.Linear.None, true);
-    this.game.add.tween(this.levelMaxFillText).to( { alpha: 0 }, 2000, Phaser.Easing.Linear.None, true);
-    for (item in this.levelTubes) {
-        this.game.add.tween(this.levelTubes[item]).to( { alpha: 0 }, 2000, Phaser.Easing.Linear.None, true);
     }
 };
 
@@ -320,8 +310,9 @@ Game.Level.prototype.levels = [
         drops: 20,
         speed: 200,
         colors: [
-            { color: 4 },
-            { color: 7 }
+            { color: 2 },
+            { color: 7 },
+            { color: 4 }
         ],
         tubes: [
             { type: 'tube1', x: 32 },

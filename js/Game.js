@@ -1,7 +1,6 @@
 Game.Game = function (game) {
     this.maxLevel = localStorage.getItem('max_level') ? localStorage.getItem('max_level') : 1;
     this.currentLevel = 1;
-    this.MaxLevels = 12;
     this.counter = 0;
     this.mute = false;
 };
@@ -28,6 +27,7 @@ Game.Game.prototype = {
         this.rolling.animations.play('roll', 10, true);
 
         this.level = new Game.Level(this.game, this.currentLevel)
+        this.MaxLevels = this.level.nLevels;
 
         this.tubes = this.game.add.group();
         for (var item in this.level.tubes) {
@@ -141,7 +141,7 @@ Game.Game.prototype = {
     },
     gameOver: function () {
         this.gameAudio.stop();
-        this.level.hideInfo();
+        //this.level.hideInfo();
 
         if (this.gameWon) {
             if (this.currentLevel == this.MaxLevels) { 
@@ -154,8 +154,8 @@ Game.Game.prototype = {
             this.input.onDown.add(this.nextLevel, this);
         }
         else {
-            this.level.gameLost();
-            this.input.onDown.add(this.quitGame, this);
+            this.quitGame();
+		    this.state.start('GameOver');
         }
     },
     nextLevel: function () {
@@ -163,12 +163,11 @@ Game.Game.prototype = {
         if (this.currentLevel > this.maxLevel) {
             localStorage.setItem('max_level', this.currentLevel);
         }
-		this.state.start('Game');
+		this.state.start('LevelSplash', true, false, this.currentLevel);
     },
 	quitGame: function () {
         this.counter = 0;
         this.currentLevel = 1;
-		this.state.start('MainMenu');
 	},
     pauseGame: function () {
         this.game.paused = true;

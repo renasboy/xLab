@@ -17,22 +17,23 @@ Game.LevelMenu.prototype = {
         this.game.add.sprite(0, 0, bg);
 
         this.enterKey = this.game.input.keyboard.addKey(Phaser.Keyboard.ENTER);
+        
+        var level = new Game.Level(this.game, 1);
+        this.nLevels = level.nLevels; 
 
         this.build();
 
         this.clickAudio = this.game.add.audio('click');
 	},
     build: function () {
-        // TODO this should be taken from Game.Level
-        var nLevels = 12;
         var nColumns = 4;
-        var nRows = Math.round(nLevels / nColumns);
+        var nRows = Math.round(this.nLevels / nColumns);
         var columnWidth = this.game.width / (nColumns + 1);
         var rowHeight = this.game.height / (nRows + 1);
         var x = columnWidth;
         var y = rowHeight;
         var style = { font: '32px Dosis-Bold', fill: '#fff', align: 'center' };
-        for (var i = 1; i <= nLevels; i++) {
+        for (var i = 1; i <= this.nLevels; i++) {
             if (i <= this.maxLevel) {
                 var button = this.game.add.button(x, y, 'tube1', this.startLevel, this);
                 button.level = i;
@@ -58,11 +59,11 @@ Game.LevelMenu.prototype = {
 	startLevel: function (button) {
         this.menuAudio.stop();
         this.clickAudio.play();
-		this.state.start('Game', true, false, button.level);
+		this.state.start('LevelSplash', true, false, button.level);
 	},
     update: function () {
         if (this.enterKey.isDown) {
-            this.state.start('Game', true, false, this.maxLevel);
+            this.state.start('LevelSplash', true, false, this.maxLevel);
         }
     }
 };
