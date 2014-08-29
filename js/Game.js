@@ -23,6 +23,8 @@ Game.Game.prototype = {
         this.game.stage.backgroundColor = 0xdddddd;
         this.game.add.tileSprite(0, 0, this.game.width, this.game.height, 'bg');
         this.rolling = this.game.add.sprite(0, this.game.height - 37, 'rolling_animation');
+        this.game.physics.enable(this.rolling, Phaser.Physics.ARCADE);
+        this.rolling.body.immovable = true;
         this.rolling.animations.add('roll');
         this.rolling.animations.play('roll', 10, true);
 
@@ -62,7 +64,6 @@ Game.Game.prototype = {
 	},
     dropBottle: function (bottle) {
         this.bottles[bottle].drop();
-        //this.checkGameOverBottle();
     },
     fillTube: function (obj1, obj2) {
         obj2.destroy();
@@ -79,6 +80,10 @@ Game.Game.prototype = {
         this.gameLost = true;
         this.gameOver();
     },
+    hitRolling: function (obj1, obj2) {
+        obj2.destroy();
+        this.checkGameOverBottle();
+    },
 	update: function () {
 
         if (this.gameLost || this.gameWon) {
@@ -88,6 +93,7 @@ Game.Game.prototype = {
         this.game.physics.arcade.collide(this.tubes);
         this.game.physics.arcade.collide(this.tubes, this.emitters, this.fillTube, null, this);
         this.game.physics.arcade.collide(this.rats, this.emitters, this.hitRat, null, this);
+        this.game.physics.arcade.collide(this.rolling, this.emitters, this.hitRolling, null, this);
 
         if (this.game.device.desktop) {
             if (this.cursors.left.isDown) {

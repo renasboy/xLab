@@ -1,4 +1,3 @@
-- game over when paint finishes / collission, or getting out of world
 - sfx
     - get new
     - game over
@@ -8,6 +7,7 @@
 - resolution/scalable/responsive (DONE?)
 - make even more levels
 - maybe use more states for LevelComplete and GameWon
+- game over when paint finishes for relevant colors, wait for all drops
 
 ###################################
 
