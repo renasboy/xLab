@@ -2,10 +2,13 @@ Game.Preloader = function (game) {};
 
 Game.Preloader.prototype = {
 	preload: function () {
-		this.loading = this.add.sprite(this.game.world.centerX - 295, this.game.world.centerY - 295, 'loading');
-		this.load.setPreloadSprite(this.loading);
+        var img = this.game.add.image(0, 0, 'loading');
+        img.x = this.game.world.centerX - img.width / 2;
+        img.y = this.game.world.centerY - img.height / 2; 
+		this.load.setPreloadSprite(img);
 
         this.load.image('logo', 'img/logo.png');
+        this.load.image('how_to_play', 'img/how_to_play.png');
         this.load.image('start', 'img/button_start.png');
         this.load.image('bg', 'img/bg.png');
         this.load.image('score_level', 'img/score_level.png');

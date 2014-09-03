@@ -35,13 +35,16 @@ Game.LevelMenu.prototype = {
         var style = { font: '32px Dosis-Bold', fill: '#fff', align: 'center' };
         for (var i = 1; i <= this.nLevels; i++) {
             if (i <= this.maxLevel) {
-                var button = this.game.add.button(x, y, 'tube1', this.startLevel, this);
+                var bitmap = this.game.make.bitmapData(128, 128);
+                bitmap.alphaMask('fill_1', 'tube1_mask', new Phaser.Rectangle(0, 50, 128, 128));
+                bitmap.alphaMask(bitmap, 'tube1');
+                var button = this.game.add.button(x, y, bitmap, this.startLevel, this);
                 button.level = i;
                 var text = this.game.add.text(x, y, i, style);
             }
             else {
                 var button = this.game.add.image(x, y, 'tube1');
-                var text = this.game.add.text(x, y, 'LOCKED', style);
+                var text = this.game.add.text(x, y, i, style);
             }
             text.x -= text.width / 2;
             text.y += text.height / 2;
