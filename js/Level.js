@@ -88,7 +88,7 @@ Game.Level.prototype.levels = [
     {
         name: 'Level 1',
         maxTubeFill: 1,
-        drops: 20,
+        drops: 3,
         speed: 200,
         colors: [
             { color: 3 }
@@ -107,7 +107,7 @@ Game.Level.prototype.levels = [
     {
         name: 'Level 2',
         maxTubeFill: 1,
-        drops: 20,
+        drops: 3,
         speed: 200,
         colors: [
             { color: 2 }
@@ -126,7 +126,7 @@ Game.Level.prototype.levels = [
     {
         name: 'Level 3',
         maxTubeFill: 1,
-        drops: 20,
+        drops: 6,
         speed: 200,
         colors: [
             { color: 1 },
@@ -148,7 +148,7 @@ Game.Level.prototype.levels = [
     {
         name: 'Level 4',
         maxTubeFill: 2,
-        drops: 20,
+        drops: 6,
         speed: 200,
         colors: [
             { color: 2 }
@@ -286,7 +286,7 @@ Game.Level.prototype.levels = [
     {
         name: 'Level 11',
         maxTubeFill: 4,
-        drops: 20,
+        drops: 18,
         speed: 200,
         colors: [
             { color: 1 },
@@ -307,7 +307,7 @@ Game.Level.prototype.levels = [
     {
         name: 'Level 12',
         maxTubeFill: 4,
-        drops: 20,
+        drops: 16,
         speed: 200,
         colors: [
             { color: 2 },

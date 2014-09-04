@@ -36,7 +36,7 @@ Game.Bottle.prototype.build = function () {
     this.bottle = this.game.add.sprite(this.xBottle - this.bottleSize / 2, 0, this.imgBottle);
 
     this.bitmap = this.game.make.bitmapData(this.buttonSize, this.buttonSize);
-    this.bitmap.alphaMask(this.imgFill, this.imgButtonMask, new Phaser.Rectangle(-30, 10, this.buttonSize, this.buttonSize));
+    this.bitmap.alphaMask(this.imgFill, this.imgButtonMask, new Phaser.Rectangle(0, 10, this.buttonSize, this.buttonSize));
     this.bitmap.alphaMask(this.bitmap, this.imgButton);
 
     this.button = this.game.add.sprite(this.game.width - this.buttonSize, this.yButton - this.buttonSize / 2, this.bitmap);
@@ -68,7 +68,7 @@ Game.Bottle.prototype.drop = function () {
         return;
     }
     var diff = (65 / this.maxParticles) * this.currentParticles;
-    this.bitmap.alphaMask(this.imgFill, this.imgButtonMask, new Phaser.Rectangle(-30, 75 - diff, this.buttonSize, this.buttonSize));
+    this.bitmap.alphaMask(this.imgFill, this.imgButtonMask, new Phaser.Rectangle(0, 75 - diff, this.buttonSize, this.buttonSize));
     this.bitmap.alphaMask(this.bitmap, this.imgButton);
     this.emitter.emitParticle();
     this.currentParticles--;
