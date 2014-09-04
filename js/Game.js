@@ -146,16 +146,15 @@ Game.Game.prototype = {
     },
     gameOver: function () {
         this.gameAudio.stop();
-        //this.level.hideInfo();
 
         if (this.gameWon) {
             if (this.currentLevel == this.MaxLevels) { 
                 this.quitGame();
                 this.state.start('GameWon');
             }
-
             this.level.levelComplete();
             this.input.onDown.add(this.nextLevel, this);
+            this.game.time.events.add(Phaser.Timer.SECOND * 3, this.nextLevel, this);
         }
         else {
             this.quitGame();

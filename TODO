@@ -18,8 +18,8 @@
 - callback high score
 - resolution/scalable/responsive (DONE?)
 - make even more levels
-- maybe use state LevelComplete
 - game over when paint finishes for relevant colors, wait for all drops
+- maybe use state LevelComplete
 
 ###################################
 
