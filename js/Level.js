@@ -70,15 +70,15 @@ Game.Level.prototype.showLevelInfo = function () {
 };
 
 Game.Level.prototype.gameLost = function () {
-    this.showInfo('game_over');
+    this.showInfo(this.imgGameover);
 };
 
 Game.Level.prototype.gameWon = function () {
-    this.showInfo('game_won');
+    this.showInfo(this.imgGameWon);
 };
 
 Game.Level.prototype.levelComplete = function () {
-    this.showInfo('level_complete');
+    this.showInfo(this.imgLevelComplete);
 };
 
 Game.Level.prototype.levels = [

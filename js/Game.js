@@ -121,7 +121,6 @@ Game.Game.prototype = {
         }
     },
     checkGameOverTube: function () {
-
         var canFill = {};
         for (var item in this.level.colors) {
             if (this.tubes.iterate('finalColor', this.level.colors[item].color, Phaser.Group.RETURN_TOTAL)) {
@@ -151,9 +150,8 @@ Game.Game.prototype = {
 
         if (this.gameWon) {
             if (this.currentLevel == this.MaxLevels) { 
-                this.level.gameWon();
-                this.input.onDown.add(this.quitGame, this);
-                return;
+                this.quitGame();
+                this.state.start('GameWon');
             }
 
             this.level.levelComplete();
