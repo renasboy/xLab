@@ -170,7 +170,7 @@ Game.Game.prototype = {
     },
 	quitGame: function () {
         this.counter = 0;
-        this.currentLevel = 1;
+        //this.currentLevel = 1;
 	},
     pauseGame: function () {
         this.game.paused = true;

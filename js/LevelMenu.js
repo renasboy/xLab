@@ -44,7 +44,7 @@ Game.LevelMenu.prototype = {
             }
             else {
                 var button = this.game.add.image(x, y, 'tube1');
-                var text = this.game.add.text(x, y, i, style);
+                var text = this.game.add.text(x, y, '?', style);
             }
             text.x -= text.width / 2;
             text.y += text.height / 2;

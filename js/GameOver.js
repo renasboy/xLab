@@ -29,7 +29,7 @@ Game.GameOver.prototype = {
 	startAgain: function () {
         this.menuAudio.stop();
         this.clickAudio.play();
-		this.state.start('MainMenu');
+		this.state.start('LevelSplash');
 	},
     update: function () {
         if (this.enterKey.isDown) {
