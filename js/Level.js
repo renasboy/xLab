@@ -43,15 +43,15 @@ Game.Level.prototype.showLevelInfo = function () {
     this.levelImg.x = this.game.world.centerX - (this.levelImg.width / 2);
     this.levelImg.y = this.game.world.centerY - (this.levelImg.height / 2);
 
-    var style = { font: '32px Dosis-Bold', fill: '#fff', align: 'center' };
+    var style = { font: '32px FontExtraBold', fill: '#fff', align: 'center' };
     this.levelText = this.game.add.text(this.levelImg.x, this.levelImg.y, this.name, style);
     this.levelText.x = this.levelImg.x + (this.levelImg.width - this.levelText.width) / 2;
-    this.levelText.y = this.levelImg.y + 35;
+    this.levelText.y = this.levelImg.y + 28;
 
-    var style = { font: '32px Dosis-Bold', fill: '#999', align: 'center' };
+    var style = { font: '40px FontExtraBold', fill: '#2d475a', align: 'center' };
     this.levelMaxFillText = this.game.add.text(this.levelImg.x, this.levelImg.y, '' + this.maxTubeFill, style);
     this.levelMaxFillText.x = (this.levelImg.x + (this.levelImg.width - this.levelMaxFillText.width) / 2) - 20;
-    this.levelMaxFillText.y = this.levelImg.y + 170;
+    this.levelMaxFillText.y = this.levelImg.y + 150;
 
     this.levelTubes = [];
     for (item in this.colors) {

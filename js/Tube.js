@@ -27,7 +27,7 @@ Game.Tube = function (game, tube, x, speed, maxFill) {
     this.bitmap.alphaMask(this.imgFill, this.imgMask, new Phaser.Rectangle(0, this.size, this.size, this.size));
     this.bitmap.alphaMask(this.bitmap, this.imgTube);
 
-    var style = { font: '24px Dosis-Bold', fill: '#fff', align: 'center' };
+    var style = { font: '24px FontExtraBold', fill: '#fff', align: 'center' };
     this.counterText = this.game.add.text(0, 0, '' + this.maxColors, style);
 
     Phaser.Sprite.call(this, game, -this.initialPosition, this.game.height - this.size - this.rollingPosition, this.bitmap, 0);

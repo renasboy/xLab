@@ -53,10 +53,10 @@ Game.Game.prototype = {
         
         this.cursors = this.game.input.keyboard.createCursorKeys();
 
-        var style = { font: '32px Dosis-Bold', fill: '#fff', align: 'center' };
+        var style = { font: '22px FontExtraBold', fill: '#fff', align: 'center' };
         this.game.add.image(10, 10, 'score_level');
-        this.counterText = this.game.add.text(20, 20, 'Score: ' + this.counter, style);
-        this.levelText = this.game.add.text(20, 60, 'Level: ' + this.currentLevel, style);
+        this.counterText = this.game.add.text(26, 16, 'Score:  ' + this.counter, style);
+        this.levelText = this.game.add.text(26, 60, 'Level:  ' + this.currentLevel, style);
 
         this.muteButton = this.game.add.button(10, 100, 'mute', this.muteMusic, this);
         this.pauseButton = this.game.add.button(95, 100, 'pause', this.pauseGame, this);

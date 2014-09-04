@@ -32,7 +32,7 @@ Game.LevelMenu.prototype = {
         var rowHeight = this.game.height / (nRows + 1);
         var x = columnWidth;
         var y = rowHeight;
-        var style = { font: '32px Dosis-Bold', fill: '#fff', align: 'center' };
+        var style = { font: '34px FontExtraBold', fill: '#fff', align: 'center' };
         for (var i = 1; i <= this.nLevels; i++) {
             if (i <= this.maxLevel) {
                 var bitmap = this.game.make.bitmapData(128, 128);
@@ -46,8 +46,8 @@ Game.LevelMenu.prototype = {
                 var button = this.game.add.image(x, y, 'tube1');
                 var text = this.game.add.text(x, y, '?', style);
             }
-            text.x -= text.width / 2;
-            text.y += text.height / 2;
+            text.x -= text.width / 3;
+            text.y += text.height / 12;
 
             button.x -= button.width / 2;
             button.y -= button.height / 2;
