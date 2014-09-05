@@ -154,7 +154,7 @@ Game.Game.prototype = {
             }
             this.level.levelComplete();
             this.input.onDown.add(this.nextLevel, this);
-            this.game.time.events.add(Phaser.Timer.SECOND * 3, this.nextLevel, this);
+            //this.game.time.events.add(Phaser.Timer.SECOND * 3, this.nextLevel, this);
         }
         else {
             this.quitGame();
