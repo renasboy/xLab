@@ -14,7 +14,9 @@ Game.MainMenu.prototype = {
         bg.fill(0, 0, 0, 0.6);
         this.game.add.sprite(0, 0, bg);
 
-        this.game.add.image(this.game.world.centerX - 225, this.game.world.centerY - 225, 'logo');
+        var img = this.game.add.image(0, 0, 'logo');
+        img.x = this.game.world.centerX - img.width / 2;
+        img.y = this.game.world.centerY - img.height / 2; 
 
         this.enterKey = this.game.input.keyboard.addKey(Phaser.Keyboard.ENTER);
 

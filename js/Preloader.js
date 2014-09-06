@@ -58,6 +58,8 @@ Game.Preloader.prototype = {
         this.game.load.audio('click', [ 'snd/click.ogg', 'snd/click.mp3' ]);
         this.game.load.audio('game', [ 'snd/game.ogg', 'snd/game.mp3' ]);
         this.game.load.audio('menu', [ 'snd/menu.ogg', 'snd/menu.mp3' ]);
+        this.game.load.audio('game_won', [ 'snd/game_won.ogg', 'snd/game_won.mp3' ]);
+        this.game.load.audio('game_over', [ 'snd/game_over.ogg', 'snd/game_over.mp3' ]);
 	},
 	create: function () {
 		this.state.start('MainMenu');

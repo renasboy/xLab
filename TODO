@@ -1,8 +1,4 @@
-- sfx
-    - get new
-    - game over
-    - level complete
-    - game won
+- sfx, new music
 - analytics
 - callback high score
 - color help screen

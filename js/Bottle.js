@@ -52,7 +52,7 @@ Game.Bottle.prototype.build = function () {
     this.emitter.makeParticles(this.imgParticle, [0], this.maxParticles, true, false); // another true for world collision
     this.emitter.minParticleSpeed.setTo(0, this.dropSpeed);
     this.emitter.maxParticleSpeed.setTo(0, this.dropSpeed);
-    this.emitter.setSize(1, 1);
+    this.emitter.setSize(1, 1, this.dropSize / 2, this.dropSize);
     this.emitter.setRotation(0, 0);
     this.emitter.lifespan = 0;
     this.emitter.emitX += this.bottleSize / 2 - this.dropSize / 4;
