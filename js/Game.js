@@ -18,7 +18,7 @@ Game.Game.prototype = {
         this.gameWon = false;
         this.done = {};
 
-        this.gameAudio = this.game.add.audio('game', 1, true);
+        this.gameAudio = this.game.add.audio('game', 0.2, true);
         this.gameAudio.play();
 
         this.game.stage.backgroundColor = 0xdddddd;
