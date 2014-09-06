@@ -79,7 +79,7 @@ Game.Level.prototype.gameWon = function () {
 
 Game.Level.prototype.levelComplete = function (score) {
     this.showInfo(this.imgLevelComplete);
-    var style = { font: '60px FontExtraBold', fill: '#fff', align: 'center' };
+    var style = { font: '100px FontExtraBold', fill: '#fff', align: 'center' };
     this.game.add.text(550, 330, score, style);
 };
 
