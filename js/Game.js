@@ -158,7 +158,8 @@ Game.Game.prototype = {
                 this.state.start('GameWon');
                 return;
             }
-            this.level.levelComplete();
+            this.level.levelComplete(this.counter);
+            this.game.add.image(this.game.world.centerX + 100, this.game.world.centerY + 100, 'next');
             this.input.onDown.add(this.nextLevel, this);
 
             this.gameWonAudio = this.game.add.audio('game_won', 1);
