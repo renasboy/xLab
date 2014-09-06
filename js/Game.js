@@ -1,4 +1,5 @@
 Game.Game = function (game) {
+    this.menuAudio = null;
     this.maxLevel = localStorage.getItem('max_level') ? localStorage.getItem('max_level') : 1;
     this.currentLevel = 1;
     this.counter = 0;
@@ -151,10 +152,13 @@ Game.Game.prototype = {
             if (this.currentLevel == this.MaxLevels) { 
                 this.quitGame();
                 this.state.start('GameWon');
+                return;
             }
             this.level.levelComplete();
             this.input.onDown.add(this.nextLevel, this);
-            //this.game.time.events.add(Phaser.Timer.SECOND * 3, this.nextLevel, this);
+
+            this.game.menuAudio = this.game.add.audio('menu', 0.5, true);
+            this.game.menuAudio.play();
         }
         else {
             this.quitGame();

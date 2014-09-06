@@ -3,8 +3,8 @@
     - game over
     - level complete
     - game won
+- analytics
 - go straight to level menu if level > 1
-- use only one menu music
 - callback high score
 - color help screen
 - make even more levels

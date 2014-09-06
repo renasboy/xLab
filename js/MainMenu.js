@@ -5,8 +5,8 @@ Game.MainMenu.prototype = {
 
         this.game.stage.backgroundColor = 0x000000;
 
-        this.menuAudio = this.game.add.audio('menu', 0.5);
-        this.menuAudio.play();
+        this.game.menuAudio = this.game.add.audio('menu', 0.5, true);
+        this.game.menuAudio.play();
 
         this.game.add.tileSprite(0, 0, this.game.width, this.game.height, 'bg');
 
@@ -22,7 +22,6 @@ Game.MainMenu.prototype = {
         this.clickAudio = this.game.add.audio('click');
 	},
 	startGame: function (pointer) {
-        this.menuAudio.destroy(true);
         this.clickAudio.play();
         this.clickAudio.destroy(true);
 		this.state.start('HowToPlay');
