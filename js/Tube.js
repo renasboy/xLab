@@ -47,6 +47,9 @@ Game.Tube.prototype.constructor = Game.Tube;
 Game.Tube.prototype.build = function () {
     this.game.physics.enable(this, Phaser.Physics.ARCADE);
     this.body.setSize(2, 1, this.size / 2 - 1, 0); //collision area
+    this.body.checkCollision.left = false;
+    this.body.checkCollision.right = false;
+    this.body.checkCollision.down = false;
     this.body.velocity.x = this.speed;
     this.body.bounce = new Phaser.Pointer(0, 0);
 };
