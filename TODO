@@ -1,42 +1,25 @@
-- flow
-    loading
-    splash
-    how to play
-    level selector
-    objetive
-    game
-    gameover
-    pause
-    help
-
-
 - sfx
     - get new
     - game over
     - level complete
     - game won
+- go straight to level menu if level > 1
+- use only one menu music
 - callback high score
-- resolution/scalable/responsive (DONE?)
+- color help screen
 - make even more levels
 - game over when paint finishes for relevant colors, wait for all drops
+- review matrix, some levels cant pass, premature game over
 - maybe use state LevelComplete
+- implement maybe the cool level select
+- proper pause with pause menu
 
 ###################################
 
-- level select
-- gameOver
-- level Complete
-- CHAMPION!
-- Music
-- Mouse animado (zzZZzzZZzZZ)
 - preload
 - splash animal
+- level Complete
+- gameWon
+- gameOver
+- Mouse animado (zzZZzzZZzZZ)
 - pontuação
-
-
-
-##########  B U G  ###########
-
-- Quando acaba os drops de uma cor e você ainda precisa preencher o tubo.
-- Level 10, não consigo passar
-- Não consigo mais jogar no desktop
