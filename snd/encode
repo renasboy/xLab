@@ -1,0 +1,9 @@
+#!/bin/bash
+
+for file in *mp3; do
+    ogg=${file/.mp3/.ogg}
+    [[ -f $ogg ]] && continue;
+    mplayer $file -ao pcm
+    oggenc -Q -o $ogg audiodump.wav
+    rm -f audiodump.wav
+done    

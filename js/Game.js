@@ -17,8 +17,8 @@ Game.Game.prototype = {
         this.gameWon = false;
         this.done = {};
 
-        this.gameAudio = this.game.add.audio('game');
-        this.gameAudio.play('', 0, 1, true);
+        this.gameAudio = this.game.add.audio('game', 1, true);
+        this.gameAudio.play();
 
         this.game.stage.backgroundColor = 0xdddddd;
         this.game.add.tileSprite(0, 0, this.game.width, this.game.height, 'bg');
@@ -145,7 +145,7 @@ Game.Game.prototype = {
         }
     },
     gameOver: function () {
-        this.gameAudio.stop();
+        this.gameAudio.destroy(true);
 
         if (this.gameWon) {
             if (this.currentLevel == this.MaxLevels) { 

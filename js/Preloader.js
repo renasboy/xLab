@@ -52,12 +52,12 @@ Game.Preloader.prototype = {
         this.load.image('mute', 'img/button_audio_off.png');
         this.load.image('unmute', 'img/button_audio_on.png');
         this.load.image('pause', 'img/button_pause.png');
-        this.game.load.audio('rat', 'snd/drop.mp3');
-        this.game.load.audio('drop', 'snd/drop.mp3');
-        this.game.load.audio('bottle', 'snd/bottle.mp3');
-        this.game.load.audio('click', 'snd/click.mp3');
-        this.game.load.audio('game', 'snd/game.mp3');
-        this.game.load.audio('menu', 'snd/menu.mp3');
+        this.game.load.audio('rat', [ 'snd/drop.ogg', 'snd/drop.mp3' ]);
+        this.game.load.audio('drop', [ 'snd/drop.ogg', 'snd/drop.mp3' ]);
+        this.game.load.audio('bottle', [ 'snd/bottle.ogg', 'snd/bottle.mp3' ]);
+        this.game.load.audio('click', [ 'snd/click.ogg', 'snd/click.mp3' ]);
+        this.game.load.audio('game', [ 'snd/game.ogg', 'snd/game.mp3' ]);
+        this.game.load.audio('menu', [ 'snd/menu.ogg', 'snd/menu.mp3' ]);
 	},
 	create: function () {
 		this.state.start('MainMenu');
