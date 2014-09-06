@@ -72,7 +72,7 @@ Game.Game.prototype = {
             return;
         }
         obj1.fill(obj2.key);
-        this.counter += this.level.maxTubeFill;
+        this.counter += this.level.maxTubeFill * 10;
         this.checkGameOverTube();
     },
     hitRat: function (obj1, obj2) {
