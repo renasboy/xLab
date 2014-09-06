@@ -157,13 +157,19 @@ Game.Game.prototype = {
             this.level.levelComplete();
             this.input.onDown.add(this.nextLevel, this);
 
+            this.gameWonAudio = this.game.add.audio('game_won', 1);
+            this.gameWonAudio.play();
+
             this.game.menuAudio = this.game.add.audio('menu', 0.5, true);
-            this.game.menuAudio.play();
+            this.game.time.events.add(Phaser.Timer.SECOND, this.playAudio, this);
         }
         else {
             this.quitGame();
 		    this.state.start('GameOver');
         }
+    },
+    playAudio: function () {
+        this.game.menuAudio.play();
     },
     nextLevel: function () {
         this.currentLevel++;

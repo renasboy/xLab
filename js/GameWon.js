@@ -5,8 +5,11 @@ Game.GameWon.prototype = {
 
         this.game.stage.backgroundColor = 0x000000;
 
+        this.gameWonAudio = this.game.add.audio('game_won', 1);
+        this.gameWonAudio.play();
+
         this.game.menuAudio = this.game.add.audio('menu', 0.5, true);
-        this.game.menuAudio.play();
+        this.game.time.events.add(Phaser.Timer.SECOND, this.playAudio, this);
 
         this.game.add.tileSprite(0, 0, this.game.width, this.game.height, 'bg');
 
@@ -21,6 +24,9 @@ Game.GameWon.prototype = {
         this.input.onDown.addOnce(this.startAgain, this);
         this.clickAudio = this.game.add.audio('click');
 	},
+    playAudio: function () {
+        this.game.menuAudio.play();
+    },
     build: function () {
         var level = new Game.Level(this.game, this.level)
         level.gameWon();
