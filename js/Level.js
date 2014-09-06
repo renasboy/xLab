@@ -35,10 +35,6 @@ Game.Level.prototype.showInfo = function (img, hide) {
 };
 
 Game.Level.prototype.showLevelInfo = function () {
-    var bg = this.game.add.bitmapData(this.game.width, this.game.height);
-    bg.fill(0, 0, 0, 0.6);
-    this.levelBg = this.game.add.sprite(0, 0, bg);
-
     this.levelImg = this.game.add.image(0, 0, this.img);
     this.levelImg.x = this.game.world.centerX - (this.levelImg.width / 2);
     this.levelImg.y = this.game.world.centerY - (this.levelImg.height / 2);
