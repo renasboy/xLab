@@ -4,7 +4,6 @@
     - level complete
     - game won
 - analytics
-- go straight to level menu if level > 1
 - callback high score
 - color help screen
 - make even more levels

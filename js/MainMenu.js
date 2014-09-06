@@ -24,7 +24,13 @@ Game.MainMenu.prototype = {
 	startGame: function (pointer) {
         this.clickAudio.play();
         this.clickAudio.destroy(true);
-		this.state.start('HowToPlay');
+        var maxLevel = localStorage.getItem('max_level') ? localStorage.getItem('max_level') : 1;
+        if (maxLevel > 1) {
+		    this.state.start('LevelMenu');
+        }
+        else {
+            this.state.start('HowToPlay');
+        }
 	},
     update: function () {
         if (this.enterKey.isDown) {
