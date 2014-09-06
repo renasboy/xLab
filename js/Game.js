@@ -76,6 +76,10 @@ Game.Game.prototype = {
         this.checkGameOverTube();
     },
     hitRat: function (obj1, obj2) {
+        // rat with rat collision
+        if (obj2.key == 'rat1') {
+            return;
+        }
         obj2.destroy();
         obj1.hit();
         this.gameLost = true;
@@ -91,7 +95,7 @@ Game.Game.prototype = {
             return;
         }
 
-        this.game.physics.arcade.collide(this.tubes);
+        //this.game.physics.arcade.collide(this.tubes);
         this.game.physics.arcade.collide(this.tubes, this.emitters, this.fillTube, null, this);
         this.game.physics.arcade.collide(this.rats, this.emitters, this.hitRat, null, this);
         this.game.physics.arcade.collide(this.rolling, this.emitters, this.hitRolling, null, this);
@@ -187,13 +191,11 @@ Game.Game.prototype = {
     },
     muteMusic: function () {
         if (this.mute) {
-            console.log('unmute');
             this.gameAudio.resume();
             this.mute = false;
             this.muteButton.loadTexture('mute');
             return;
         }
-        console.log('mute');
         this.gameAudio.pause();
         this.mute = true; 
         this.muteButton.loadTexture('unmute');

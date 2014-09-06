@@ -5,7 +5,7 @@ Game.Preloader.prototype = {
         var img = this.game.add.image(0, 0, 'loading');
         img.x = this.game.world.centerX - img.width / 2;
         img.y = this.game.world.centerY - img.height / 2; 
-		this.load.setPreloadSprite(img);
+		this.load.setPreloadSprite(img, 1);
 
         this.load.image('logo', 'img/logo.png');
         this.load.image('how_to_play', 'img/how_to_play.png');

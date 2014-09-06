@@ -1,13 +1,12 @@
-- sfx, new music
-- analytics
+- analytics (events: start, go, level selected, pause, mute, help, drop, drop rolling, drop tube, drop rat, level complete, game over, game won)
 - callback high score
 - color help screen
 - make even more levels
 - game over when paint finishes for relevant colors, wait for all drops
-- review matrix, some levels cant pass, premature game over
 - maybe use state LevelComplete
 - implement maybe the cool level select
 - proper pause with pause menu
+- sfx, new music
 
 ###################################
 
