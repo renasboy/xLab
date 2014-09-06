@@ -9,7 +9,7 @@ Game.GameWon.prototype = {
         this.gameWonAudio.play();
 
         this.game.menuAudio = this.game.add.audio('menu', 0.5, true);
-        this.game.time.events.add(Phaser.Timer.SECOND, this.playAudio, this);
+        this.game.time.events.add(Phaser.Timer.SECOND * 1.5, this.playAudio, this);
 
         this.game.add.tileSprite(0, 0, this.game.width, this.game.height, 'bg');
 

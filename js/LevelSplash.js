@@ -27,7 +27,7 @@ Game.LevelSplash.prototype = {
     build: function () {
         var level = new Game.Level(this.game, this.level)
         level.showLevelInfo();
-        this.game.add.image(this.game.world.centerX - 128, this.game.world.centerY + 250, 'start');
+        this.game.add.image(this.game.world.centerX + 100, this.game.world.centerY + 100, 'next');
     },
 	startLevel: function () {
         this.game.menuAudio.destroy(true);

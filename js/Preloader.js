@@ -10,6 +10,7 @@ Game.Preloader.prototype = {
         this.load.image('logo', 'img/logo.png');
         this.load.image('how_to_play', 'img/how_to_play.png');
         this.load.image('start', 'img/button_start.png');
+        this.load.image('next', 'img/button_next.png');
         this.load.image('bg', 'img/bg.png');
         this.load.image('score_level', 'img/score_level.png');
         this.load.image('rolling', 'img/rolling.png');
