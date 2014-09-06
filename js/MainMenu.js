@@ -3,7 +3,7 @@ Game.MainMenu = function (game) {};
 Game.MainMenu.prototype = {
 	create: function () {
 
-        this.game.stage.backgroundColor = 0x000000;
+        this.game.stage.backgroundColor = 0x152736;
 
         this.game.menuAudio = this.game.add.audio('menu', 0.5, true);
         this.game.menuAudio.play();

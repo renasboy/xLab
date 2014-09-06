@@ -7,6 +7,8 @@ Game.Preloader.prototype = {
         img.y = this.game.world.centerY - img.height / 2; 
 		this.load.setPreloadSprite(img, 1);
 
+        this.game.stage.backgroundColor = 0x152736;
+
         this.load.image('logo', 'img/logo.png');
         this.load.image('how_to_play', 'img/how_to_play.png');
         this.load.image('next', 'img/button_next.png');

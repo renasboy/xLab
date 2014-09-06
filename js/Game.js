@@ -21,7 +21,7 @@ Game.Game.prototype = {
         this.gameAudio = this.game.add.audio('game', 0.5, true);
         this.gameAudio.play();
 
-        this.game.stage.backgroundColor = 0xdddddd;
+        this.game.stage.backgroundColor = 0x152736;
         this.game.add.tileSprite(0, 0, this.game.width, this.game.height, 'bg');
         this.rolling = this.game.add.sprite(0, this.game.height - 37, 'rolling_animation');
         this.game.physics.enable(this.rolling, Phaser.Physics.ARCADE);

@@ -3,7 +3,7 @@ Game.GameWon = function (game) {};
 Game.GameWon.prototype = {
 	create: function () {
 
-        this.game.stage.backgroundColor = 0x000000;
+        this.game.stage.backgroundColor = 0x152736;
 
         this.gameWonAudio = this.game.add.audio('game_won', 1);
         this.gameWonAudio.play();

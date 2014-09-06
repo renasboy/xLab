@@ -3,7 +3,7 @@ Game.HowToPlay = function (game) {};
 Game.HowToPlay.prototype = {
 	create: function () {
 
-        this.game.stage.backgroundColor = 0x000000;
+        this.game.stage.backgroundColor = 0x152736;
 
         this.game.add.tileSprite(0, 0, this.game.width, this.game.height, 'bg');
 

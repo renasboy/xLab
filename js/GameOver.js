@@ -3,7 +3,7 @@ Game.GameOver = function (game) {};
 Game.GameOver.prototype = {
 	create: function () {
 
-        this.game.stage.backgroundColor = 0x000000;
+        this.game.stage.backgroundColor = 0x152736;
 
         this.gameOverAudio = this.game.add.audio('game_over', 1);
         this.gameOverAudio.play();
