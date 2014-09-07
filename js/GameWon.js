@@ -13,10 +13,6 @@ Game.GameWon.prototype = {
 
         this.game.add.tileSprite(0, 0, this.game.width, this.game.height, 'bg');
 
-        var bg = this.game.add.bitmapData(this.game.width, this.game.height);
-        bg.fill(0, 0, 0, 0.6);
-        this.game.add.sprite(0, 0, bg);
-
         this.enterKey = this.game.input.keyboard.addKey(Phaser.Keyboard.ENTER);
 
         this.build();
