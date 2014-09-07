@@ -54,14 +54,17 @@ Game.Game.prototype = {
         
         this.cursors = this.game.input.keyboard.createCursorKeys();
 
-        var style = { font: '22px FontExtraBold', fill: '#fff', align: 'center' };
-        this.game.add.image(10, 10, 'score_level');
-        this.counterText = this.game.add.text(26, 16, 'Score:  ' + this.counter, style);
-        this.levelText = this.game.add.text(26, 60, 'Level:  ' + this.currentLevel, style);
+        var style = { font: '32px FontExtraBold', fill: '#fff', align: 'center' };
+        this.game.add.image(10, 10, 'objective_level');
+        this.counterText = this.game.add.text(30, 20, 'Score:  ' + this.counter, style);
+        this.levelText = this.game.add.text(30, 70, 'Level:  ' + this.currentLevel, style);
 
-        this.muteButton = this.game.add.button(10, 100, 'mute', this.muteMusic, this);
-        this.pauseButton = this.game.add.button(95, 100, 'pause', this.pauseGame, this);
-        this.game.input.onDown.add(function () { if(this.game.paused) this.game.paused = false; }, this);
+        this.level.showLevelObjective();
+
+        this.muteButton = this.game.add.button(10, 170, 'unmute', this.muteMusic, this);
+        this.helpButton = this.game.add.button(65, 170, 'help', this.helpGame, this);
+        this.pauseButton = this.game.add.button(120, 170, 'pause', this.pauseGame, this);
+        this.game.input.onDown.add(function () { if (this.game.paused) { this.pauseButton.loadTexture('pause'); this.game.paused = false; } }, this);
 	},
     dropBottle: function (bottle) {
         this.bottles[bottle].drop();
@@ -183,22 +186,25 @@ Game.Game.prototype = {
         }
 		this.state.start('LevelSplash', true, false, this.currentLevel);
     },
+    helpGame: function () {
+        this.level.help();
+    },
 	quitGame: function () {
         this.counter = 0;
-        //this.currentLevel = 1;
 	},
     pauseGame: function () {
+        this.pauseButton.loadTexture('play');
         this.game.paused = true;
     },
     muteMusic: function () {
         if (this.mute) {
             this.gameAudio.resume();
             this.mute = false;
-            this.muteButton.loadTexture('mute');
+            this.muteButton.loadTexture('unmute');
             return;
         }
         this.gameAudio.pause();
         this.mute = true; 
-        this.muteButton.loadTexture('unmute');
+        this.muteButton.loadTexture('mute');
     }
 };

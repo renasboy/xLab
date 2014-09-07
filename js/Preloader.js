@@ -11,9 +11,10 @@ Game.Preloader.prototype = {
 
         this.load.image('logo', 'img/logo.png');
         this.load.image('how_to_play', 'img/how_to_play.png');
+        this.load.image('color_help', 'img/help.png');
         this.load.image('next', 'img/button_next.png');
         this.load.image('bg', 'img/bg.png');
-        this.load.image('score_level', 'img/score_level.png');
+        this.load.image('objective_level', 'img/objective_level.png');
         this.load.image('rolling', 'img/rolling.png');
         this.load.spritesheet('rolling_animation', 'img/rolling_animation.png', 1200, 37, 6);
         this.load.image('game_over', 'img/game_over.png');
@@ -54,6 +55,8 @@ Game.Preloader.prototype = {
         this.load.image('mute', 'img/button_audio_off.png');
         this.load.image('unmute', 'img/button_audio_on.png');
         this.load.image('pause', 'img/button_pause.png');
+        this.load.image('play', 'img/button_play.png');
+        this.load.image('help', 'img/button_help.png');
         this.game.load.audio('rat', [ 'snd/drop.ogg', 'snd/drop.mp3' ]);
         this.game.load.audio('drop', [ 'snd/drop.ogg', 'snd/drop.mp3' ]);
         this.game.load.audio('bottle', [ 'snd/bottle.ogg', 'snd/bottle.mp3' ]);

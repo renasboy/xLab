@@ -12,13 +12,14 @@ Game.Level = function (game, level) {
     this.imgGameover = 'game_over';
     this.imgGameWon = 'game_won';
     this.imgLevelComplete = 'level_complete';
+    this.imgHelp = 'color_help';
 
     return this;
 };
 
 Game.Level.prototype.hideInfo = function () {
-    this.game.add.tween(this.levelImg).to( { alpha: 0 }, 2000, Phaser.Easing.Linear.None, true);
-    this.game.add.tween(this.levelBg).to( { alpha: 0 }, 2000, Phaser.Easing.Linear.None, true);
+    this.game.add.tween(this.levelImg).to( { alpha: 0 }, 1000, Phaser.Easing.Linear.None, true);
+    this.game.add.tween(this.levelBg).to( { alpha: 0 }, 1000, Phaser.Easing.Linear.None, true);
 };
 
 Game.Level.prototype.showInfo = function (img, hide) {
@@ -31,6 +32,24 @@ Game.Level.prototype.showInfo = function (img, hide) {
     this.levelImg.y = this.game.world.centerY - (this.levelImg.height / 2);
     if (hide) {
         this.game.time.events.add(Phaser.Timer.SECOND * 2, this.hideInfo, this); 
+    }
+};
+
+Game.Level.prototype.showLevelObjective = function () {
+    var size = 32;
+    this.levelTubes = [];
+    for (item in this.colors) {
+        this.bitmap = this.game.make.bitmapData(32, 32);
+        this.bitmap.alphaMask('fill_' + this.colors[item].color, 'tube1_mask', new Phaser.Rectangle(0, 20, 32, 32), new Phaser.Rectangle(0, 0, 32, 32));
+        this.bitmap.alphaMask(this.bitmap, 'tube1', new Phaser.Rectangle(0, 0, 32, 32), new Phaser.Rectangle(0, 0, 32, 32));
+        this.levelTube = this.game.add.image(0, 0, this.bitmap);
+        this.levelTube.y = 120;
+        this.levelTubes.push(this.levelTube);
+    }
+
+    for (item in this.levelTubes) {
+        var gutter = (161 - 32 * this.levelTubes.length) / (this.levelTubes.length + 1);
+        this.levelTubes[item].x = 10 + gutter + (item * (32 + gutter));
     }
 };
 
@@ -71,6 +90,11 @@ Game.Level.prototype.gameLost = function () {
 
 Game.Level.prototype.gameWon = function () {
     this.showInfo(this.imgGameWon);
+};
+
+Game.Level.prototype.help = function () {
+    this.showInfo(this.imgHelp);
+    this.game.input.onDown.add(this.hideInfo, this);
 };
 
 Game.Level.prototype.levelComplete = function (score) {

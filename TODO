@@ -1,6 +1,5 @@
-- color help screen
-- objective
 - game over when paint finishes for relevant colors, wait for all drops, when the drop hits the tube
+- game over reusable tubes, when objetive cannot be reached
 - analytics (events: start, go, level selected, pause, mute, help, drop, drop rolling, drop tube, drop rat, level complete, game over, game won)
 - callback high score
 - make even more levels
@@ -8,14 +7,15 @@
 - implement maybe the cool level select
 - proper pause with pause menu
 - sfx, new music
+- color help screen bug, need to pause first
 
 ###################################
 
 - presentation screen
+- make a sprite of all images
 - preload
 - gameWon
 - Mouse animado (zzZZzzZZzZZ)
-
 
 ###### Levels  ######
 
@@ -24,7 +24,6 @@
 - blue (1), yellow (1), red (1)
 - blue-yellow (1)
 - green (2)
-
 
 #####  Divulgation  #####
 
