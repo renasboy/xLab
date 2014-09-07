@@ -9,7 +9,7 @@ Game.Bottle = function (game, bottle, drops, xBottle, yButton) {
 
     this.bottleSize = 142;
     this.buttonSize = 142;
-    this.dropSize = 60;
+    this.dropSize = 24;
 
     this.empty = false;
 
@@ -55,7 +55,7 @@ Game.Bottle.prototype.build = function () {
     this.emitter.setSize(1, 1);
     this.emitter.setRotation(0, 0);
     this.emitter.lifespan = 0;
-    this.emitter.emitX += this.bottleSize / 2 - this.dropSize / 4;
+    this.emitter.emitX += this.bottleSize / 2 - this.dropSize / 2;
     this.emitter.emitY += this.bottleSize / 4 * 3;
 };
 
