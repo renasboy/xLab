@@ -11,7 +11,7 @@ Game.Rat = function (game, rat, x, speed) {
     // need this
     this.game = game;
 
-    Phaser.Sprite.call(this, game, -this.initialPosition, this.game.height - this.size - this.rollingPosition, this.imgRat, 0);
+    Phaser.Sprite.call(this, game, -this.initialPosition, this.game.height - this.size - this.rollingPosition + 20, this.imgRat, 0);
 
     this.ratAudio = this.game.add.audio('rat');
 
@@ -48,7 +48,7 @@ Game.Rat.prototype.update = function () {
     if (this.body.x > this.game.width) {
         this.body.x = -this.initialPosition;
     }
-    if (this.body.y - 58 + this.size > this.game.height - this.rollingPosition) {
-        this.body.y = this.game.height - 70 - this.rollingPosition;
+    if (this.body.y - 58 + this.size  + 20 > this.game.height - this.rollingPosition) {
+        this.body.y = this.game.height - 70 - this.rollingPosition + 20;
     }
 };

@@ -30,7 +30,7 @@ Game.Tube = function (game, tube, x, speed, maxFill) {
     var style = { font: '24px FontExtraBold', fill: '#fff', align: 'center' };
     this.counterText = this.game.add.text(0, 0, '' + this.maxColors, style);
 
-    Phaser.Sprite.call(this, game, -this.initialPosition, this.game.height - this.size - this.rollingPosition, this.bitmap, 0);
+    Phaser.Sprite.call(this, game, -this.initialPosition, this.game.height - this.size - this.rollingPosition + 5, this.bitmap, 0);
 
     this.colorWheel = new Game.ColorWheel(this.game);
 
@@ -114,8 +114,8 @@ Game.Tube.prototype.update = function () {
     if (this.body.x > this.game.width) {
         this.body.x = -this.initialPosition;
     }
-    if (this.body.y + this.size > this.game.height - this.rollingPosition) {
-        this.body.y = this.game.height - this.size - this.rollingPosition;
+    if (this.body.y + this.size + 5 > this.game.height - this.rollingPosition) {
+        this.body.y = this.game.height - this.size - this.rollingPosition + 5;
     }
     this.counterText.x = this.body.x + this.size / 2;
     this.counterText.y = this.body.y;
