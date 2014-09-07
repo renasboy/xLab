@@ -13,13 +13,16 @@ Game.Level = function (game, level) {
     this.imgGameWon = 'game_won';
     this.imgLevelComplete = 'level_complete';
     this.imgHelp = 'color_help';
+    this.imgPause = 'pause_screen';
 
     return this;
 };
 
 Game.Level.prototype.hideInfo = function () {
-    this.game.add.tween(this.levelImg).to( { alpha: 0 }, 1000, Phaser.Easing.Linear.None, true);
-    this.game.add.tween(this.levelBg).to( { alpha: 0 }, 1000, Phaser.Easing.Linear.None, true);
+    //this.game.add.tween(this.levelImg).to( { alpha: 0 }, 1000, Phaser.Easing.Linear.None, true);
+    //this.game.add.tween(this.levelBg).to( { alpha: 0 }, 1000, Phaser.Easing.Linear.None, true);
+    this.levelImg.destroy();
+    this.levelBg.destroy();
 };
 
 Game.Level.prototype.showInfo = function (img, hide) {
@@ -94,7 +97,10 @@ Game.Level.prototype.gameWon = function () {
 
 Game.Level.prototype.help = function () {
     this.showInfo(this.imgHelp);
-    this.game.input.onDown.add(this.hideInfo, this);
+};
+
+Game.Level.prototype.pause = function () {
+    this.showInfo(this.imgPause);
 };
 
 Game.Level.prototype.levelComplete = function (score) {

@@ -16,6 +16,7 @@ Game.Game.prototype = {
 	create: function () {
         this.gameLost = false;
         this.gameWon = false;
+        this.gamePaused = false;
         this.done = {};
 
         this.gameAudio = this.game.add.audio('game', 0.5, true);
@@ -64,7 +65,7 @@ Game.Game.prototype = {
         this.muteButton = this.game.add.button(10, 170, 'unmute', this.muteMusic, this);
         this.helpButton = this.game.add.button(65, 170, 'help', this.helpGame, this);
         this.pauseButton = this.game.add.button(120, 170, 'pause', this.pauseGame, this);
-        this.game.input.onDown.add(function () { if (this.game.paused) { this.pauseButton.loadTexture('pause'); this.game.paused = false; } }, this);
+        this.pauseButton.pause = true;
 	},
     dropBottle: function (bottle) {
         this.bottles[bottle].drop();
@@ -94,11 +95,10 @@ Game.Game.prototype = {
     },
 	update: function () {
 
-        if (this.gameLost || this.gameWon) {
+        if (this.gameLost || this.gameWon || this.gamePaused) {
             return;
         }
 
-        //this.game.physics.arcade.collide(this.tubes);
         this.game.physics.arcade.collide(this.tubes, this.emitters, this.fillTube, null, this);
         this.game.physics.arcade.collide(this.rats, this.emitters, this.hitRat, null, this);
         this.game.physics.arcade.collide(this.rolling, this.emitters, this.hitRolling, null, this);
@@ -187,14 +187,49 @@ Game.Game.prototype = {
 		this.state.start('LevelSplash', true, false, this.currentLevel);
     },
     helpGame: function () {
+        this.pauseGame();
         this.level.help();
+        this.game.input.onDown.add(this.hideHelpGame, this);
+    },
+    hideHelpGame: function () {
+        this.level.hideInfo();
+        this.unpauseGame();
     },
 	quitGame: function () {
         this.counter = 0;
 	},
-    pauseGame: function () {
+    pauseGame: function (button) {
+        this.gamePaused = true;
         this.pauseButton.loadTexture('play');
-        this.game.paused = true;
+        this.muteButton.inputEnabled = false;
+        this.helpButton.inputEnabled = false;
+        this.pauseButton.inputEnabled = false;
+        this.tubes.callAll('pause');
+        this.rats.callAll('pause');
+        this.bottles[1].pause();
+        this.bottles[2].pause();
+        this.bottles[3].pause();
+        if (button && button.pause == true) {
+            this.level.pause();
+            this.playButton = this.game.add.button(this.game.world.centerX + 100, this.game.world.centerY + 100, 'next', this.unpauseGame, this);
+            this.playButton.play = true;
+        }
+    },
+    unpauseGame: function (button) {
+        this.pauseButton.loadTexture('pause');
+        if (button && button.play == true) {
+            this.level.hideInfo();
+            this.playButton.destroy();
+        }
+        this.tubes.callAll('unpause');
+        this.rats.callAll('unpause');
+        this.bottles[1].unpause();
+        this.bottles[2].unpause();
+        this.bottles[3].unpause();
+        this.muteButton.inputEnabled = true;
+        this.helpButton.inputEnabled = true;
+        this.pauseButton.inputEnabled = true;
+        this.gamePaused = false;
     },
     muteMusic: function () {
         if (this.mute) {

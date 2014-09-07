@@ -59,6 +59,14 @@ Game.Bottle.prototype.build = function () {
     this.emitter.emitY += this.bottleSize / 4 * 3;
 };
 
+Game.Bottle.prototype.pause = function () {
+    this.button.inputEnabled = false;
+};
+
+Game.Bottle.prototype.unpause = function () {
+    this.button.inputEnabled = true;
+};
+
 Game.Bottle.prototype.drop = function () {
     if (this.game.time.now < this.dropTime ||
         this.currentParticles <= 0) {

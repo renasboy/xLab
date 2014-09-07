@@ -54,6 +54,16 @@ Game.Tube.prototype.build = function () {
     this.body.bounce = new Phaser.Pointer(0, 0);
 };
 
+Game.Tube.prototype.pause = function () {
+    this.body.immovable = true;
+    this.body.enable = false;
+}
+
+Game.Tube.prototype.unpause = function () {
+    this.body.immovable = false;
+    this.body.enable = true;
+}
+
 Game.Tube.prototype.fill = function (color) {
     if (!this.canFill()) {
         return;

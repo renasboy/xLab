@@ -5,13 +5,12 @@
 - make even more levels
 - maybe use state LevelComplete
 - implement maybe the cool level select
-- proper pause with pause menu
 - sfx, new music
-- color help screen bug, need to pause first
 
 ###################################
 
 - presentation screen
+- pause
 - make a sprite of all images
 - smaller particles (collision area)
 - preload

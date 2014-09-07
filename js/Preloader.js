@@ -21,6 +21,7 @@ Game.Preloader.prototype = {
         this.load.image('game_won', 'img/game_won.png');
         this.load.image('level_complete', 'img/level_complete.png');
         this.load.image('level', 'img/level.png');
+        this.load.image('pause_screen', 'img/pause.png');
         this.load.image('primary1', 'img/primary1_bottle.png');
         this.load.image('primary2', 'img/primary2_bottle.png');
         this.load.image('primary3', 'img/primary3_bottle.png');

@@ -30,6 +30,16 @@ Game.Rat.prototype.build = function () {
     this.body.bounce = new Phaser.Pointer(0, 0);
 };
 
+Game.Rat.prototype.pause = function () {
+    this.body.immovable = true;
+    this.body.enable = false;
+}
+
+Game.Rat.prototype.unpause = function () {
+    this.body.immovable = false;
+    this.body.enable = true;
+}
+
 Game.Rat.prototype.hit = function (color) {
     this.ratAudio.play();
 };
