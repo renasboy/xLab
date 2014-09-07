@@ -207,4 +207,19 @@ Game.Game.prototype = {
         this.mute = true; 
         this.muteButton.loadTexture('mute');
     }
+    /*
+    ,
+    render: function () {
+        this.game.debug.body(this.tubes.getTop());
+        this.game.debug.body(this.tubes.getBottom());
+        this.game.debug.body(this.rats.getTop());
+        this.game.debug.body(this.rats.getBottom());
+        this.game.debug.body(this.emitters[1].getTop());
+        this.game.debug.body(this.emitters[2].getTop());
+        this.game.debug.body(this.emitters[3].getTop());
+        this.game.debug.body(this.emitters[1].getBottom());
+        this.game.debug.body(this.emitters[2].getBottom());
+        this.game.debug.body(this.emitters[3].getBottom());
+    }
+    */
 };
