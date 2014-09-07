@@ -214,6 +214,7 @@ Game.Game.prototype = {
             this.level.pause();
             this.playButton = this.game.add.button(this.game.world.centerX + 100, this.game.world.centerY + 100, 'next', this.unpauseGame, this);
             this.playButton.play = true;
+            this.gameAudio.volume = 0.1;
         }
     },
     unpauseGame: function (button) {
@@ -221,6 +222,7 @@ Game.Game.prototype = {
         if (button && button.play == true) {
             this.level.hideInfo();
             this.playButton.destroy();
+            this.gameAudio.volume = 0.5;
         }
         this.tubes.callAll('unpause');
         this.rats.callAll('unpause');
