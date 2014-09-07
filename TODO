@@ -1,5 +1,8 @@
-- game over when paint finishes for relevant colors, wait for all drops, when the drop hits the tube
-- game over reusable tubes, when objetive cannot be reached
+- game over
+    - when paint finishes for relevant colors only
+    - wait for all drops to fall
+    - when the last drop hits the tube
+    - reusable tubes while calculating possible objective, when objetive cannot be reached
 - analytics (events: start, go, level selected, pause, mute, help, drop, drop rolling, drop tube, drop rat, level complete, game over, game won)
 - callback high score
 - make even more levels
