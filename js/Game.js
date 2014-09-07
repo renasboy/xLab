@@ -189,7 +189,7 @@ Game.Game.prototype = {
     helpGame: function () {
         this.pauseGame();
         this.level.help();
-        this.playButton = this.game.add.button(this.game.world.centerX + 100, this.game.world.centerY + 100, 'next', this.hideHelpGame, this);
+        this.playButton = this.game.add.button(this.game.world.centerX + 300, this.game.world.centerY + 120, 'next', this.hideHelpGame, this);
     },
     hideHelpGame: function () {
         this.level.hideInfo();
