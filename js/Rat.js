@@ -1,6 +1,6 @@
 Game.Rat = function (game, rat, x, speed) {
     
-    this.imgRat = rat;
+    this.imgRat = rat + '_animation';
     this.initialPosition = x;
     this.speed = speed;
 
@@ -12,6 +12,8 @@ Game.Rat = function (game, rat, x, speed) {
     this.game = game;
 
     Phaser.Sprite.call(this, game, -this.initialPosition, this.game.height - this.size - this.rollingPosition + 20, this.imgRat, 0);
+    this.animations.add('sleep');
+    this.animations.play('sleep', 6, true);
 
     this.ratAudio = this.game.add.audio('rat');
 

@@ -15,7 +15,6 @@ Game.Preloader.prototype = {
         this.load.image('next', 'img/button_next.png');
         this.load.image('bg', 'img/bg.png');
         this.load.image('objective_level', 'img/objective_level.png');
-        this.load.image('rolling', 'img/rolling.png');
         this.load.spritesheet('rolling_animation', 'img/rolling_animation.png', 1200, 37, 6);
         this.load.image('game_over', 'img/game_over.png');
         this.load.image('game_won', 'img/game_won.png');
@@ -34,6 +33,7 @@ Game.Preloader.prototype = {
         this.load.image('primary2_particle', 'img/primary2_particle.png');
         this.load.image('primary3_particle', 'img/primary3_particle.png');
         this.load.image('rat1', 'img/rat1.png');
+        this.load.spritesheet('rat1_animation', 'img/rat1_sprite.png', 128, 128, 6);
         this.load.image('tube1', 'img/tube1.png');
         this.load.image('tube2', 'img/tube2.png');
         this.load.image('tube3', 'img/tube3.png');
