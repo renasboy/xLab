@@ -5,6 +5,8 @@ Game.LevelMenu.prototype = {
 
         this.maxLevel = localStorage.getItem('max_level') ? localStorage.getItem('max_level') : 1;
 
+        ga('send', 'event', 'xLab', 'LevelMenu', 'Load', this.maxLevel);
+
         this.game.stage.backgroundColor = 0x152736;
 
         this.game.add.tileSprite(0, 0, this.game.width, this.game.height, 'bg');

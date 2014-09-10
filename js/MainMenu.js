@@ -3,6 +3,8 @@ Game.MainMenu = function (game) {};
 Game.MainMenu.prototype = {
 	create: function () {
 
+        ga('send', 'event', 'xLab', 'MainMenu', 'Load');
+
         this.game.stage.backgroundColor = 0x152736;
 
         this.game.menuAudio = this.game.add.audio('menu', 0.5, true);
