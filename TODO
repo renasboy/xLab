@@ -1,8 +1,3 @@
-- game over
-    - when paint finishes for relevant colors only
-    - wait for all drops to fall
-    - when the last drop hits the tube
-    - reusable tubes while calculating possible objective, when objetive cannot be reached
 - callback high score
 - make even more levels
 - maybe use state LevelComplete

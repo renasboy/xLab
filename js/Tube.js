@@ -91,19 +91,23 @@ Game.Tube.prototype.canFill = function () {
     return this.colors.length < this.maxColors;
 }
 
-Game.Tube.prototype.canFillWith = function (color) {
+Game.Tube.prototype.canFillWith = function (color, r, y, b) {
     for (item in this.colorWheel.mixMap) {
         if (this.colorWheel.mixMap[item] != color ||
             item <= this.mixIndex) {
             continue;
         }
         var diff = item - this.mixIndex;
-        var ryb = ('' + diff).split('');
+        var diff_string ='000' + diff;
+        var ryb = diff_string.substring(diff_string.length - 3, diff_string.length).split('');
         var sum = 0;
         for (index in ryb) {
             sum += parseInt(ryb[index]);
         }
-        if (sum <= this.maxColors - this.colors.length) {
+        if (sum <= this.maxColors - this.colors.length &&
+            r >= ryb[0] &&
+            y >= ryb[1] &&
+            b >= ryb[2]) {
             return true;
         }
     }

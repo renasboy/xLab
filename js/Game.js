@@ -104,7 +104,10 @@ Game.Game.prototype = {
     hitRolling: function (obj1, obj2) {
         ga('send', 'event', 'xLab', 'Game', 'HitRolling', 'Primary' + obj2.key.substring(7, 8));
         obj2.destroy();
-        this.checkGameOverBottle();
+        // only check game over once last drop hits the rolling
+        if (this.emitters[obj2.key.substring(7,8)].countLiving() == 0) {
+            this.checkGameOverTube();
+        }
     },
 	update: function () {
 
@@ -133,24 +136,25 @@ Game.Game.prototype = {
         }
         this.counterText.text = 'Score: ' + this.counter;
 	},
-    checkGameOverBottle: function () {
-        if (this.bottles[1].empty ||
-            this.bottles[2].empty ||
-            this.bottles[3].empty) {
-            this.gameLost = true;
-            this.gameOver();
-        }
-    },
     checkGameOverTube: function () {
         var canFill = {};
+        var canFillTube = {};
+        // foreach objetive colors
         for (var item in this.level.colors) {
+            // if there are tubes filled with this color
+            // this might raise a bug if the objetive has two
+            // or more color of the same
             if (this.tubes.iterate('finalColor', this.level.colors[item].color, Phaser.Group.RETURN_TOTAL)) {
                 this.done['result' + item] = true;
             }
             else {
                 this.tubes.forEach(function (obj) {
-                    if (obj.canFillWith(this.level.colors[item].color)) {
+                    if (obj.canFillWith(this.level.colors[item].color,
+                                        this.bottles[1].currentParticles,
+                                        this.bottles[2].currentParticles,
+                                        this.bottles[3].currentParticles)) {
                         canFill['result' + item] = true;
+                        canFillTube['result' + obj.imgTube] = true;
                     }
                 }, this);
             }
@@ -160,7 +164,8 @@ Game.Game.prototype = {
             this.gameWon = true;
             this.gameOver();
         }
-        else if (Object.keys(this.done).length + Object.keys(canFill).length < this.level.colors.length) {
+        else if (Object.keys(this.done).length + Object.keys(canFill).length < this.level.colors.length ||
+                 Object.keys(canFillTube).length < this.level.colors.length - Object.keys(this.done).length) {
             this.gameLost = true;
             this.gameOver();
         }
