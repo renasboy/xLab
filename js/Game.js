@@ -176,6 +176,7 @@ Game.Game.prototype = {
         if (this.gameWon) {
             if (this.currentLevel == this.MaxLevels) { 
                 ga('send', 'event', 'xLab', 'Game', 'GameWon', this.currentLevel);
+                ga('send', 'event', 'xLab', 'Game', 'Score', this.counter);
                 this.quitGame();
                 this.state.start('GameWon');
                 return;
