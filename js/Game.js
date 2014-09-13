@@ -235,6 +235,7 @@ Game.Game.prototype = {
         this.bottles[1].pause();
         this.bottles[2].pause();
         this.bottles[3].pause();
+        this.rolling.animations.stop();
         if (button && button.pause == true) {
             this.level.pause();
             this.playButton = this.game.add.button(this.game.world.centerX + 100, this.game.world.centerY + 100, 'next', this.unpauseGame, this);
@@ -255,6 +256,7 @@ Game.Game.prototype = {
         this.bottles[1].unpause();
         this.bottles[2].unpause();
         this.bottles[3].unpause();
+        this.rolling.animations.play('roll', 10, true);
         this.muteButton.inputEnabled = true;
         this.helpButton.inputEnabled = true;
         this.pauseButton.inputEnabled = true;

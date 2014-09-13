@@ -35,11 +35,13 @@ Game.Rat.prototype.build = function () {
 Game.Rat.prototype.pause = function () {
     this.body.immovable = true;
     this.body.enable = false;
+    this.animations.stop();
 }
 
 Game.Rat.prototype.unpause = function () {
     this.body.immovable = false;
     this.body.enable = true;
+    this.animations.play('sleep', 6, true);
 }
 
 Game.Rat.prototype.hit = function (color) {
