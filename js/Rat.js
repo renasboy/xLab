@@ -6,7 +6,7 @@ Game.Rat = function (game, rat, x, speed) {
 
     this.rollingPosition = 32;
 
-    this.size = 128;
+    this.size = 174;
 
     // need this
     this.game = game;

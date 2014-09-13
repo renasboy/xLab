@@ -15,7 +15,7 @@ Game.Bottle = function (game, bottle, drops, xBottle, yButton) {
 
     this.dropTime = 0;
     this.dropTimeout = 300;
-    this.dropSpeed = 400;
+    this.dropSpeed = 500;
 
     this.imgBottle = bottle;
     this.imgButton = 'button';

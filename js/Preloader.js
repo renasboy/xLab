@@ -33,7 +33,7 @@ Game.Preloader.prototype = {
         this.load.image('primary2_particle', 'img/primary2_particle.png');
         this.load.image('primary3_particle', 'img/primary3_particle.png');
         this.load.image('rat1', 'img/rat1.png');
-        this.load.spritesheet('rat1_animation', 'img/rat1_sprite.png', 128, 128, 6);
+        this.load.spritesheet('rat1_animation', 'img/rat1_sprite.png', 128, 174, 8);
         this.load.image('tube1', 'img/tube1.png');
         this.load.image('tube2', 'img/tube2.png');
         this.load.image('tube3', 'img/tube3.png');

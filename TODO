@@ -5,3 +5,11 @@
 
 - presentation screen
 - make a sprite of all images
+
+
+- fix rat sleeping
+- fix font-type problem
+- update "level" selector
+- add a tilt e "Select aa level" on the level select
+- mix mute bug (when go to next level music start automatically)
+- add to the "Game.Level.prototype.levels" a away to variate the particle speed
