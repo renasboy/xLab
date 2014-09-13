@@ -57,6 +57,7 @@ Game.Game.prototype = {
         this.emitters[3] = this.bottles[3].emitter;
         
         this.cursors = this.game.input.keyboard.createCursorKeys();
+        this.enterKey = this.game.input.keyboard.addKey(Phaser.Keyboard.ENTER);
 
         var style = { font: '20px FontExtraBold', fill: '#fff', align: 'center' };
         this.game.add.image(10, 10, 'objective_level');
@@ -110,6 +111,10 @@ Game.Game.prototype = {
         }
     },
 	update: function () {
+
+        if (this.gameWon && this.game.device.desktop && this.enterKey.isDown) {
+            this.nextLevel();
+        }
 
         if (this.gameLost || this.gameWon || this.gamePaused) {
             return;
@@ -183,8 +188,7 @@ Game.Game.prototype = {
             }
             ga('send', 'event', 'xLab', 'Game', 'LevelComplete', this.currentLevel);
             this.level.levelComplete(this.counter);
-            this.game.add.image(this.game.world.centerX + 100, this.game.world.centerY + 100, 'next');
-            this.input.onDown.add(this.nextLevel, this);
+            this.game.add.button(this.game.world.centerX + 100, this.game.world.centerY + 100, 'next', this.nextLevel, this);
 
             this.gameWonAudio = this.game.add.audio('game_won', 1);
             this.gameWonAudio.play();
