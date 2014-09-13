@@ -1,25 +1,7 @@
+- make better levels 10 and 11 are too similar, also change speed
 - callback high score
-- make even more levels
-- maybe use state LevelComplete
+- make even more levels and level menu pagination
 - implement maybe the cool level select
-- sfx, new music
-
-###################################
 
 - presentation screen
-- pause
 - make a sprite of all images
-- preload
-- Mouse animado (zzZZzzZZzZZ)
-
-###### Levels  ######
-
-- blue (1)
-- blue (1), yellow (1)
-- blue (1), yellow (1), red (1)
-- blue-yellow (1)
-- green (2)
-
-#####  Divulgation  #####
-
-Creat a list of places and startegy of divulgation
