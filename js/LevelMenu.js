@@ -25,7 +25,7 @@ Game.LevelMenu.prototype = {
         this.clickAudio = this.game.add.audio('click');
 	},
     build: function () {
-        var nColumns = 4;
+        var nColumns = 6;
         var nRows = Math.round(this.nLevels / nColumns);
         var columnWidth = this.game.width / (nColumns + 1);
         var rowHeight = this.game.height / (nRows + 1);
