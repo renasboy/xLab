@@ -19,8 +19,6 @@ Game.Level = function (game, level) {
 };
 
 Game.Level.prototype.hideInfo = function () {
-    //this.game.add.tween(this.levelImg).to( { alpha: 0 }, 1000, Phaser.Easing.Linear.None, true);
-    //this.game.add.tween(this.levelBg).to( { alpha: 0 }, 1000, Phaser.Easing.Linear.None, true);
     this.levelImg.destroy();
     this.levelBg.destroy();
 };
@@ -117,18 +115,17 @@ Game.Level.prototype.levels = [
     {
         name: 'Level 1',
         maxTubeFill: 1,
-        drops: 20,
-        speed: 250,
+        drops: 5,
         speed: 200,
         colors: [
             { color: 1 },
             { color: 2 },
-            { color: 3 },
+            { color: 3 }
         ],
         tubes: [
             { type: 'tube1', x: 32 },
             { type: 'tube2', x: 400 },
-            { type: 'tube3', x: 700 },
+            { type: 'tube3', x: 700 }
         ],
         rats: [
             { type: 'rat1', x: 200 },
@@ -138,14 +135,16 @@ Game.Level.prototype.levels = [
 
     {
         name: 'Level 2',
-        maxTubeFill: 3,
-        drops: 25,
-        speed: 250,
+        maxTubeFill: 2,
+        drops: 15,
+        speed: 200,
         colors: [
-            { color: 0 },
+            { color: 2 },
+            { color: 3 },
+            { color: 4 }
         ],
         tubes: [
-            { type: 'tube1', x: 0 },
+            { type: 'tube1', x: 32 },
             { type: 'tube2', x: 400 },
             { type: 'tube3', x: 700 }
         ],
@@ -158,12 +157,12 @@ Game.Level.prototype.levels = [
     {
         name: 'Level 3',
         maxTubeFill: 2,
-        drops: 30,
-        speed: 250,
+        drops: 10,
+        speed: 225,
         colors: [
-            { color: 2 },
-            { color: 4 },
-            { color: 3 }
+            { color: 1 },
+            { color: 3 },
+            { color: 5 }
         ],
         tubes: [
             { type: 'tube1', x: 32 },
@@ -180,12 +179,12 @@ Game.Level.prototype.levels = [
     {
         name: 'Level 4',
         maxTubeFill: 2,
-        drops: 30,
-        speed: 250,
+        drops: 5,
+        speed: 225,
         colors: [
+            { color: 1 },
             { color: 2 },
-            { color: 7 },
-            { color: 3 }
+            { color: 6 }
         ],
         tubes: [
             { type: 'tube1', x: 32 },
@@ -200,13 +199,13 @@ Game.Level.prototype.levels = [
 
     {
         name: 'Level 5',
-        maxTubeFill: 2,
-        drops: 30,
-        speed: 250,
+        maxTubeFill: 4,
+        drops: 15,
+        speed: 225,
         colors: [
-            { color: 2 },
-            { color: 8 },
-            { color: 3 }
+            { color: 4 },
+            { color: 7 },
+            { color: 8 }
         ],
         tubes: [
             { type: 'tube1', x: 32 },
@@ -221,13 +220,13 @@ Game.Level.prototype.levels = [
 
     {
         name: 'Level 6',
-        maxTubeFill: 2,
-        drops: 30,
-        speed: 300,
+        maxTubeFill: 4,
+        drops: 20,
+        speed: 250,
         colors: [
-            { color: 2 },
             { color: 6 },
-            { color: 1 }
+            { color: 11 },
+            { color: 12 }
         ],
         tubes: [
             { type: 'tube1', x: 32 },
@@ -242,13 +241,13 @@ Game.Level.prototype.levels = [
 
     {
         name: 'Level 7',
-        maxTubeFill: 2,
-        drops: 20,
-        speed: 300,
+        maxTubeFill: 4,
+        drops: 15,
+        speed: 250,
         colors: [
-            { color: 2 },
-            { color: 11 },
-            { color: 1 }
+            { color: 5 },
+            { color: 9 },
+            { color: 10 }
         ],
         tubes: [
             { type: 'tube1', x: 32 },
@@ -263,13 +262,13 @@ Game.Level.prototype.levels = [
 
     {
         name: 'Level 8',
-        maxTubeFill: 2,
-        drops: 20,
-        speed: 300,
+        maxTubeFill: 4,
+        drops: 10,
+        speed: 250,
         colors: [
-            { color: 2 },
-            { color: 12 },
-            { color: 1 }
+            { color: 4 },
+            { color: 5 },
+            { color: 6 }
         ],
         tubes: [
             { type: 'tube1', x: 32 },
@@ -284,13 +283,13 @@ Game.Level.prototype.levels = [
 
     {
         name: 'Level 9',
-        maxTubeFill: 2,
+        maxTubeFill: 4,
         drops: 20,
         speed: 300,
         colors: [
-            { color: 3 },
-            { color: 10 },
-            { color: 1 },
+            { color: 7 },
+            { color: 9 },
+            { color: 11 },
         ],
         tubes: [
             { type: 'tube1', x: 32 },
@@ -305,13 +304,13 @@ Game.Level.prototype.levels = [
 
     {
         name: 'Level 10',
-        maxTubeFill: 3,
-        drops: 20,
-        speed: 350,
+        maxTubeFill: 4,
+        drops: 15,
+        speed: 300,
         colors: [
-            { color: 3 },
+            { color: 8 },
             { color: 10 },
-            { color: 1 },
+            { color: 12 },
         ],
         tubes: [
             { type: 'tube1', x: 32 },
@@ -327,12 +326,12 @@ Game.Level.prototype.levels = [
     {
         name: 'Level 11',
         maxTubeFill: 4,
-        drops: 30,
-        speed: 350,
+        drops: 10,
+        speed: 300,
         colors: [
-            { color: 3 },
-            { color: 9 },
             { color: 1 },
+            { color: 2 },
+            { color: 3 }
         ],
         tubes: [
             { type: 'tube1', x: 32 },
@@ -347,13 +346,11 @@ Game.Level.prototype.levels = [
 
     {
         name: 'Level 12',
-        maxTubeFill: 4,
-        drops: 40,
-        speed: 400,
+        maxTubeFill: 3,
+        drops: 5,
+        speed: 325,
         colors: [
-            { color: 8 },
-            { color: 0 },
-            { color: 7 }
+            { color: 0 }
         ],
         tubes: [
             { type: 'tube1', x: 32 },
