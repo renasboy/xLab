@@ -24,6 +24,10 @@ Game.MainMenu.prototype = {
 
         this.input.onDown.addOnce(this.startGame, this);
         this.clickAudio = this.game.add.audio('click');
+
+        // hack to load the font here
+        var style = { font: '1px FontExtraBold, Helvetica', fill: '#fff', align: 'center' };
+        this.game.add.text(-10, -10, 'font hack', style);
 	},
 	startGame: function (pointer) {
         this.clickAudio.play();
