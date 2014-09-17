@@ -31,6 +31,10 @@ Game.LevelMenu.prototype = {
         var rowHeight = this.game.height / (nRows + 1);
         var x = columnWidth;
         var y = rowHeight;
+        var style = { font: '60px FontExtraBold, Helvetica', fill: '#fff', align: 'center' };
+        var text = this.game.add.text(0, 40, 'Level selector', style);
+        text.x = this.game.width / 2 - text.width / 2;
+
         var style = { font: '34px FontExtraBold, Helvetica', fill: '#fff', align: 'center' };
         for (var i = 1; i <= this.nLevels; i++) {
             if (i <= this.maxLevel) {
