@@ -50,7 +50,7 @@ Game.LevelMenu.prototype = {
                 var text = this.game.add.text(x, y, '?', style);
             }
             text.x -= text.width / 3;
-            text.y += text.height / 3;
+            text.y += text.height / 10;
 
             button.x -= button.width / 2;
             button.y -= button.height / 2;
