@@ -15,7 +15,7 @@ Game.Game.prototype = {
     },
 	create: function () {
 
-        ga('send', 'event', 'xLab', 'Game', 'Load', this.currentLevel);
+        ga('send', 'event', 'Game', 'Load', this.currentLevel);
 
         this.gameLost = false;
         this.gameWon = false;
@@ -73,7 +73,7 @@ Game.Game.prototype = {
 	},
     dropBottle: function (bottle) {
 
-        ga('send', 'event', 'xLab', 'Game', 'Drop', bottle);
+        ga('send', 'event', 'Game', 'Drop', bottle);
 
         this.bottles[bottle].drop();
     },
@@ -83,7 +83,7 @@ Game.Game.prototype = {
             return;
         }
 
-        ga('send', 'event', 'xLab', 'Game', 'HitTube', parseInt(obj2.key.substring(7, 8)));
+        ga('send', 'event', 'Game', 'HitTube', parseInt(obj2.key.substring(7, 8)));
 
         obj1.fill(obj2.key);
         this.counter += this.level.maxTubeFill * 10;
@@ -95,7 +95,7 @@ Game.Game.prototype = {
             return;
         }
 
-        ga('send', 'event', 'xLab', 'Game', 'HitRat', parseInt(obj2.key.substring(7, 8)));
+        ga('send', 'event', 'Game', 'HitRat', parseInt(obj2.key.substring(7, 8)));
 
         obj2.destroy();
         obj1.hit();
@@ -105,7 +105,7 @@ Game.Game.prototype = {
         }
     },
     hitRolling: function (obj1, obj2) {
-        ga('send', 'event', 'xLab', 'Game', 'HitRolling', parseInt(obj2.key.substring(7, 8)));
+        ga('send', 'event', 'Game', 'HitRolling', parseInt(obj2.key.substring(7, 8)));
         obj2.destroy();
         // only check game over once last drop hits the rolling
         if (this.emitters[obj2.key.substring(7,8)].countLiving() == 0) {
@@ -183,13 +183,13 @@ Game.Game.prototype = {
 
         if (this.gameWon) {
             if (this.currentLevel == this.MaxLevels) { 
-                ga('send', 'event', 'xLab', 'Game', 'GameWon', this.currentLevel);
-                ga('send', 'event', 'xLab', 'Game', 'Score', this.counter);
+                ga('send', 'event', 'Game', 'GameWon', this.currentLevel);
+                ga('send', 'event', 'Game', 'Score', this.counter);
                 this.quitGame();
                 this.state.start('GameWon');
                 return;
             }
-            ga('send', 'event', 'xLab', 'Game', 'LevelComplete', this.currentLevel);
+            ga('send', 'event', 'Game', 'LevelComplete', this.currentLevel);
             this.level.levelComplete(this.counter);
             this.game.add.button(this.game.world.centerX + 100, this.game.world.centerY + 100, 'next', this.nextLevel, this);
 
@@ -202,7 +202,7 @@ Game.Game.prototype = {
             }
         }
         else {
-            ga('send', 'event', 'xLab', 'Game', 'GameOver', this.currentLevel);
+            ga('send', 'event', 'Game', 'GameOver', this.currentLevel);
             this.quitGame();
 		    this.state.start('GameOver');
         }
@@ -218,13 +218,13 @@ Game.Game.prototype = {
 		this.state.start('LevelSplash', true, false, this.currentLevel);
     },
     helpGame: function () {
-        ga('send', 'event', 'xLab', 'Game', 'Help', this.currentLevel);
+        ga('send', 'event', 'Game', 'Help', this.currentLevel);
         this.pauseGame();
         this.level.help();
         this.playButton = this.game.add.button(this.game.world.centerX + 300, this.game.world.centerY + 120, 'next', this.hideHelpGame, this);
     },
     hideHelpGame: function () {
-        ga('send', 'event', 'xLab', 'Game', 'HideHelp', this.currentLevel);
+        ga('send', 'event', 'Game', 'HideHelp', this.currentLevel);
         this.level.hideInfo();
         this.playButton.destroy();
         this.unpauseGame();
@@ -233,7 +233,7 @@ Game.Game.prototype = {
         this.counter = 0;
 	},
     pauseGame: function (button) {
-        ga('send', 'event', 'xLab', 'Game', 'Pause', this.currentLevel);
+        ga('send', 'event', 'Game', 'Pause', this.currentLevel);
         this.gamePaused = true;
         this.pauseButton.loadTexture('play');
         this.muteButton.inputEnabled = false;
@@ -253,7 +253,7 @@ Game.Game.prototype = {
         }
     },
     unpauseGame: function (button) {
-        ga('send', 'event', 'xLab', 'Game', 'UnPause', this.currentLevel);
+        ga('send', 'event', 'Game', 'UnPause', this.currentLevel);
         this.pauseButton.loadTexture('pause');
         if (button && button.play == true) {
             this.level.hideInfo();
@@ -278,12 +278,12 @@ Game.Game.prototype = {
     },
     resolveMusic: function () {
         if (this.mute) {
-            ga('send', 'event', 'xLab', 'Game', 'Mute', this.currentLevel);
+            ga('send', 'event', 'Game', 'Mute', this.currentLevel);
             this.gameAudio.pause();
             this.muteButton.loadTexture('mute');
             return;
         }
-        ga('send', 'event', 'xLab', 'Game', 'UnMute', this.currentLevel);
+        ga('send', 'event', 'Game', 'UnMute', this.currentLevel);
         if (this.gameAudio.paused) {
             this.gameAudio.resume();
         }

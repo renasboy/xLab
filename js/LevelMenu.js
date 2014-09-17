@@ -5,7 +5,7 @@ Game.LevelMenu.prototype = {
 
         this.maxLevel = localStorage.getItem('max_level') ? localStorage.getItem('max_level') : 1;
 
-        ga('send', 'event', 'xLab', 'LevelMenu', 'Load', this.maxLevel);
+        ga('send', 'event', 'LevelMenu', 'Load', this.maxLevel);
 
         this.game.stage.backgroundColor = 0x152736;
 

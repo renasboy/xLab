@@ -5,7 +5,7 @@ Game.MainMenu = function (game) {
 Game.MainMenu.prototype = {
 	create: function () {
 
-        ga('send', 'event', 'xLab', 'MainMenu', 'Load');
+        ga('send', 'event', 'MainMenu', 'Load');
 
         this.game.stage.backgroundColor = 0x152736;
 

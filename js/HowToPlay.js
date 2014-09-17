@@ -3,7 +3,7 @@ Game.HowToPlay = function (game) {};
 Game.HowToPlay.prototype = {
 	create: function () {
 
-        ga('send', 'event', 'xLab', 'HowToPlay', 'Load');
+        ga('send', 'event', 'HowToPlay', 'Load');
 
         this.game.stage.backgroundColor = 0x152736;
 

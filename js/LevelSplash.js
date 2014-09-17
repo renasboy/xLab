@@ -9,7 +9,7 @@ Game.LevelSplash.prototype = {
     },
 	create: function () {
 
-        ga('send', 'event', 'xLab', 'LevelSplash', 'Load', this.level);
+        ga('send', 'event', 'LevelSplash', 'Load', this.level);
 
         this.game.stage.backgroundColor = 0x152736;
 
