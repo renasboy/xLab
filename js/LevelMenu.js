@@ -31,7 +31,7 @@ Game.LevelMenu.prototype = {
         var rowHeight = this.game.height / (nRows + 1);
         var x = columnWidth;
         var y = rowHeight;
-        var style = { font: '60px FontExtraBold, Helvetica', fill: '#fff', align: 'center' };
+        var style = { font: '50px FontExtraBold, Helvetica', fill: '#fff', align: 'center' };
         var text = this.game.add.text(0, 40, 'Level selector', style);
         text.x = this.game.width / 2 - text.width / 2;
 
@@ -50,7 +50,7 @@ Game.LevelMenu.prototype = {
                 var text = this.game.add.text(x, y, '?', style);
             }
             text.x -= text.width / 3;
-            text.y += text.height / 12;
+            text.y += text.height / 3;
 
             button.x -= button.width / 2;
             button.y -= button.height / 2;
