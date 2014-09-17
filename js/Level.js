@@ -41,7 +41,7 @@ Game.Level.prototype.showLevelObjective = function () {
     this.levelTubes = [];
     for (item in this.colors) {
         this.bitmap = this.game.make.bitmapData(32, 32);
-        this.bitmap.alphaMask('fill_' + this.colors[item].color, 'tube1_mask', new Phaser.Rectangle(0, 20, 32, 32), new Phaser.Rectangle(0, 0, 32, 32));
+        this.bitmap.alphaMask('fill_' + this.colors[item].color, 'tube1_mask', new Phaser.Rectangle(0, 10, 32, 32), new Phaser.Rectangle(0, 0, 32, 32));
         this.bitmap.alphaMask(this.bitmap, 'tube1', new Phaser.Rectangle(0, 0, 32, 32), new Phaser.Rectangle(0, 0, 32, 32));
         this.levelTube = this.game.add.image(0, 0, this.bitmap);
         this.levelTube.y = 120;
