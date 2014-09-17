@@ -1,5 +1,4 @@
 - mix mute bug (when go to next level music start automatically)
-- add to the "Game.Level.prototype.levels" a away to variate the particle speed
 - callback high score
 - presentation screen
 - make a sprite of all images

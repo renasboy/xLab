@@ -1,4 +1,4 @@
-Game.Bottle = function (game, bottle, drops, xBottle, yButton) {
+Game.Bottle = function (game, bottle, drops, speed, xBottle, yButton) {
 
     this.xBottle = xBottle;
     this.yButton = yButton;
@@ -15,7 +15,7 @@ Game.Bottle = function (game, bottle, drops, xBottle, yButton) {
 
     this.dropTime = 0;
     this.dropTimeout = 300;
-    this.dropSpeed = 500;
+    this.dropSpeed = speed;
 
     this.imgBottle = bottle;
     this.imgButton = 'button';
