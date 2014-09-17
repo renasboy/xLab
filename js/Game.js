@@ -99,8 +99,10 @@ Game.Game.prototype = {
 
         obj2.destroy();
         obj1.hit();
-        this.gameLost = true;
-        this.gameOver();
+        if (!this.gameLost) {
+            this.gameLost = true;
+            this.gameOver();
+        }
     },
     hitRolling: function (obj1, obj2) {
         ga('send', 'event', 'xLab', 'Game', 'HitRolling', 'Primary' + obj2.key.substring(7, 8));
@@ -165,12 +167,13 @@ Game.Game.prototype = {
             }
         }
 
-        if (Object.keys(this.done).length == this.level.colors.length) {
+        if (Object.keys(this.done).length == this.level.colors.length && !this.gameWon) {
             this.gameWon = true;
             this.gameOver();
         }
         else if (Object.keys(this.done).length + Object.keys(canFill).length < this.level.colors.length ||
-                 Object.keys(canFillTube).length < this.level.colors.length - Object.keys(this.done).length) {
+                 Object.keys(canFillTube).length < this.level.colors.length - Object.keys(this.done).length &&
+                 !this.gameLost) {
             this.gameLost = true;
             this.gameOver();
         }
