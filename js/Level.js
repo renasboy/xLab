@@ -59,12 +59,12 @@ Game.Level.prototype.showLevelInfo = function () {
     this.levelImg.x = this.game.world.centerX - (this.levelImg.width / 2);
     this.levelImg.y = this.game.world.centerY - (this.levelImg.height / 2);
 
-    var style = { font: '32px FontExtraBold', fill: '#fff', align: 'center' };
+    var style = { font: '32px FontExtraBold, Helvetica', fill: '#fff', align: 'center' };
     this.levelText = this.game.add.text(this.levelImg.x, this.levelImg.y, this.name, style);
     this.levelText.x = this.levelImg.x + (this.levelImg.width - this.levelText.width) / 2;
     this.levelText.y = this.levelImg.y + 28;
 
-    var style = { font: '40px FontExtraBold', fill: '#2d475a', align: 'center' };
+    var style = { font: '40px FontExtraBold, Helvetica', fill: '#2d475a', align: 'center' };
     this.levelMaxFillText = this.game.add.text(this.levelImg.x, this.levelImg.y, '' + this.maxTubeFill, style);
     this.levelMaxFillText.x = (this.levelImg.x + (this.levelImg.width - this.levelMaxFillText.width) / 2) - 20;
     this.levelMaxFillText.y = this.levelImg.y + 150;
@@ -103,7 +103,7 @@ Game.Level.prototype.pause = function () {
 
 Game.Level.prototype.levelComplete = function (score) {
     this.showInfo(this.imgLevelComplete);
-    var style = { font: '100px FontExtraBold', fill: '#fff', align: 'center' };
+    var style = { font: '100px FontExtraBold, Helvetica', fill: '#fff', align: 'center' };
     var text = this.game.add.text(520, 320, score, style);
     text.x = this.game.width / 2 - text.width / 2;
 };

@@ -43,7 +43,7 @@ Game.Bottle.prototype.build = function () {
     this.button.inputEnabled = true;
     this.button.events.onInputDown.add(this.drop, this);
 
-    var style = { font: '24px FontExtraBold', fill: '#fff', align: 'center' };
+    var style = { font: '24px FontExtraBold, Helvetica', fill: '#fff', align: 'center' };
     this.counterText = this.game.add.text(this.game.width - this.buttonSize - 50, this.yButton - this.buttonSize / 4, '' + this.currentParticles, style);
 
     // create emitters

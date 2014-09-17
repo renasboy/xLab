@@ -1,8 +1,7 @@
-- callback high score
-- implement maybe the cool level select, make even more levels
-- presentation screen
-- make a sprite of all images
-- fix font-type problem
 - add a title  "Select level" on the level selector
 - mix mute bug (when go to next level music start automatically)
 - add to the "Game.Level.prototype.levels" a away to variate the particle speed
+- callback high score
+- presentation screen
+- make a sprite of all images
+- implement maybe the cool level select, make even more levels

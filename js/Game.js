@@ -59,7 +59,7 @@ Game.Game.prototype = {
         this.cursors = this.game.input.keyboard.createCursorKeys();
         this.enterKey = this.game.input.keyboard.addKey(Phaser.Keyboard.ENTER);
 
-        var style = { font: '20px FontExtraBold', fill: '#fff', align: 'center' };
+        var style = { font: '20px FontExtraBold, Helvetica', fill: '#fff', align: 'center' };
         this.game.add.image(10, 10, 'objective_level');
         this.counterText = this.game.add.text(30, 26, 'Score:  ' + this.counter, style);
         this.levelText = this.game.add.text(30, 76, 'Level:  ' + this.currentLevel, style);

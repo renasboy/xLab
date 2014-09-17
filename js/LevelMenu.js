@@ -31,7 +31,7 @@ Game.LevelMenu.prototype = {
         var rowHeight = this.game.height / (nRows + 1);
         var x = columnWidth;
         var y = rowHeight;
-        var style = { font: '34px FontExtraBold', fill: '#fff', align: 'center' };
+        var style = { font: '34px FontExtraBold, Helvetica', fill: '#fff', align: 'center' };
         for (var i = 1; i <= this.nLevels; i++) {
             if (i <= this.maxLevel) {
                 var bitmap = this.game.make.bitmapData(128, 128);
