@@ -1,4 +1,6 @@
-Game.MainMenu = function (game) {};
+Game.MainMenu = function (game) {
+    this.mute = localStorage.getItem('mute') == 'true' ? true : false;
+};
 
 Game.MainMenu.prototype = {
 	create: function () {
@@ -8,7 +10,9 @@ Game.MainMenu.prototype = {
         this.game.stage.backgroundColor = 0x152736;
 
         this.game.menuAudio = this.game.add.audio('menu', 0.5, true);
-        this.game.menuAudio.play();
+        if (!this.mute) {
+            this.game.menuAudio.play();
+        }
 
         this.game.add.tileSprite(0, 0, this.game.width, this.game.height, 'bg');
 

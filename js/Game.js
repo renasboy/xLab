@@ -3,7 +3,7 @@ Game.Game = function (game) {
     this.maxLevel = localStorage.getItem('max_level') ? localStorage.getItem('max_level') : 1;
     this.currentLevel = 1;
     this.counter = 0;
-    this.mute = false;
+    this.mute = localStorage.getItem('mute') == 'true' ? true : false;
 };
 
 Game.Game.prototype = {
@@ -23,7 +23,6 @@ Game.Game.prototype = {
         this.done = {};
 
         this.gameAudio = this.game.add.audio('game', 0.5, true);
-        this.gameAudio.play();
 
         this.game.stage.backgroundColor = 0x152736;
         this.game.add.tileSprite(0, 0, this.game.width, this.game.height, 'bg');
@@ -70,6 +69,7 @@ Game.Game.prototype = {
         this.helpButton = this.game.add.button(65, 170, 'help', this.helpGame, this);
         this.pauseButton = this.game.add.button(120, 170, 'pause', this.pauseGame, this);
         this.pauseButton.pause = true;
+        this.resolveMusic();
 	},
     dropBottle: function (bottle) {
 
@@ -197,7 +197,9 @@ Game.Game.prototype = {
             this.gameWonAudio.play();
 
             this.game.menuAudio = this.game.add.audio('menu', 0.5, true);
-            this.game.time.events.add(Phaser.Timer.SECOND * 1.5, this.playAudio, this);
+            if (!this.mute) {
+                this.game.time.events.add(Phaser.Timer.SECOND * 1.5, this.playAudio, this);
+            }
         }
         else {
             ga('send', 'event', 'xLab', 'Game', 'GameOver', this.currentLevel);
@@ -270,18 +272,26 @@ Game.Game.prototype = {
         this.gamePaused = false;
     },
     muteMusic: function () {
+        this.mute = !this.mute;
+        localStorage.setItem('mute', this.mute);
+        this.resolveMusic()
+    },
+    resolveMusic: function () {
         if (this.mute) {
-            ga('send', 'event', 'xLab', 'Game', 'UnMute', this.currentLevel);
-            this.gameAudio.resume();
-            this.mute = false;
-            this.muteButton.loadTexture('unmute');
+            ga('send', 'event', 'xLab', 'Game', 'Mute', this.currentLevel);
+            this.gameAudio.pause();
+            this.muteButton.loadTexture('mute');
             return;
         }
-        ga('send', 'event', 'xLab', 'Game', 'Mute', this.currentLevel);
-        this.gameAudio.pause();
-        this.mute = true; 
-        this.muteButton.loadTexture('mute');
-    }
+        ga('send', 'event', 'xLab', 'Game', 'UnMute', this.currentLevel);
+        if (this.gameAudio.paused) {
+            this.gameAudio.resume();
+        }
+        else {
+            this.gameAudio.play();
+        }
+        this.muteButton.loadTexture('unmute');
+    },
     /*
     ,
     render: function () {
