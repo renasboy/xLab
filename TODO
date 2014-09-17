@@ -1,15 +1,8 @@
-- make better levels 10 and 11 are too similar, also change speed
 - callback high score
-- make even more levels and level menu pagination
-- implement maybe the cool level select
-
+- implement maybe the cool level select, make even more levels
 - presentation screen
 - make a sprite of all images
-
-
-- fix rat sleeping
 - fix font-type problem
-- update "level" selector
 - add a title  "Select level" on the level selector
 - mix mute bug (when go to next level music start automatically)
 - add to the "Game.Level.prototype.levels" a away to variate the particle speed
