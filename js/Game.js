@@ -73,7 +73,7 @@ Game.Game.prototype = {
 	},
     dropBottle: function (bottle) {
 
-        ga('send', 'event', 'xLab', 'Game', 'Drop', 'Primary' + bottle);
+        ga('send', 'event', 'xLab', 'Game', 'Drop', bottle);
 
         this.bottles[bottle].drop();
     },
@@ -83,7 +83,7 @@ Game.Game.prototype = {
             return;
         }
 
-        ga('send', 'event', 'xLab', 'Game', 'HitTube', 'Primary' + obj2.key.substring(7, 8));
+        ga('send', 'event', 'xLab', 'Game', 'HitTube', parseInt(obj2.key.substring(7, 8)));
 
         obj1.fill(obj2.key);
         this.counter += this.level.maxTubeFill * 10;
@@ -95,7 +95,7 @@ Game.Game.prototype = {
             return;
         }
 
-        ga('send', 'event', 'xLab', 'Game', 'HitRat', 'Primary' + obj2.key.substring(7, 8));
+        ga('send', 'event', 'xLab', 'Game', 'HitRat', parseInt(obj2.key.substring(7, 8)));
 
         obj2.destroy();
         obj1.hit();
@@ -105,7 +105,7 @@ Game.Game.prototype = {
         }
     },
     hitRolling: function (obj1, obj2) {
-        ga('send', 'event', 'xLab', 'Game', 'HitRolling', 'Primary' + obj2.key.substring(7, 8));
+        ga('send', 'event', 'xLab', 'Game', 'HitRolling', parseInt(obj2.key.substring(7, 8)));
         obj2.destroy();
         // only check game over once last drop hits the rolling
         if (this.emitters[obj2.key.substring(7,8)].countLiving() == 0) {
