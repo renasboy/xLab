@@ -116,21 +116,23 @@ Game.Level.prototype.levels = [
         name: 'Level 1',
         maxTubeFill: 1,
         drops: 5,
-        rollingSpeed: 200,
+        rollingSpeed: 100,
         dropSpeed: 500,
         colors: [
             { color: 1 },
-            { color: 2 },
-            { color: 3 }
+            //{ color: 2 },
+            //{ color: 3 }
         ],
         tubes: [
             { type: 'tube1', x: 32 },
-            { type: 'tube2', x: 400 },
-            { type: 'tube3', x: 700 }
+            //{ type: 'tube2', x: 400 },
+            //{ type: 'tube3', x: 700 }
         ],
         rats: [
             { type: 'rat1', x: 200 },
-            { type: 'rat1', x: 550 }
+            { type: 'rat1', x: 550 },
+            { type: 'rat1', x: 650 },
+            { type: 'rat1', x: 150 }
         ]
     },
 
@@ -138,7 +140,7 @@ Game.Level.prototype.levels = [
         name: 'Level 2',
         maxTubeFill: 2,
         drops: 15,
-        rollingSpeed: 200,
+        rollingSpeed: 100,
         dropSpeed: 500,
         colors: [
             { color: 2 },
@@ -160,7 +162,7 @@ Game.Level.prototype.levels = [
         name: 'Level 3',
         maxTubeFill: 2,
         drops: 10,
-        rollingSpeed: 225,
+        rollingSpeed: 100,
         dropSpeed: 500,
         colors: [
             { color: 1 },
@@ -183,7 +185,7 @@ Game.Level.prototype.levels = [
         name: 'Level 4',
         maxTubeFill: 2,
         drops: 5,
-        rollingSpeed: 225,
+        rollingSpeed: 150,
         dropSpeed: 500,
         colors: [
             { color: 1 },
@@ -205,8 +207,8 @@ Game.Level.prototype.levels = [
         name: 'Level 5',
         maxTubeFill: 4,
         drops: 15,
-        rollingSpeed: 225,
-        dropSpeed: 750,
+        rollingSpeed: 150,
+        dropSpeed: 500,
         colors: [
             { color: 4 },
             { color: 7 },
@@ -227,8 +229,8 @@ Game.Level.prototype.levels = [
         name: 'Level 6',
         maxTubeFill: 4,
         drops: 20,
-        rollingSpeed: 250,
-        dropSpeed: 750,
+        rollingSpeed: 150,
+        dropSpeed: 500,
         colors: [
             { color: 6 },
             { color: 11 },
@@ -249,8 +251,8 @@ Game.Level.prototype.levels = [
         name: 'Level 7',
         maxTubeFill: 4,
         drops: 15,
-        rollingSpeed: 250,
-        dropSpeed: 750,
+        rollingSpeed: 200,
+        dropSpeed: 500,
         colors: [
             { color: 5 },
             { color: 9 },
@@ -271,8 +273,8 @@ Game.Level.prototype.levels = [
         name: 'Level 8',
         maxTubeFill: 4,
         drops: 10,
-        rollingSpeed: 250,
-        dropSpeed: 750,
+        rollingSpeed: 200,
+        dropSpeed: 500,
         colors: [
             { color: 4 },
             { color: 5 },
@@ -293,8 +295,8 @@ Game.Level.prototype.levels = [
         name: 'Level 9',
         maxTubeFill: 4,
         drops: 20,
-        rollingSpeed: 300,
-        dropSpeed: 750,
+        rollingSpeed: 200,
+        dropSpeed: 500,
         colors: [
             { color: 7 },
             { color: 9 },
@@ -315,8 +317,8 @@ Game.Level.prototype.levels = [
         name: 'Level 10',
         maxTubeFill: 4,
         drops: 15,
-        rollingSpeed: 300,
-        dropSpeed: 1000,
+        rollingSpeed: 250,
+        dropSpeed: 500,
         colors: [
             { color: 8 },
             { color: 10 },
@@ -337,8 +339,8 @@ Game.Level.prototype.levels = [
         name: 'Level 11',
         maxTubeFill: 4,
         drops: 10,
-        rollingSpeed: 300,
-        dropSpeed: 1000,
+        rollingSpeed: 250,
+        dropSpeed: 500,
         colors: [
             { color: 1 },
             { color: 2 },
@@ -359,8 +361,8 @@ Game.Level.prototype.levels = [
         name: 'Level 12',
         maxTubeFill: 3,
         drops: 5,
-        rollingSpeed: 325,
-        dropSpeed: 1000,
+        rollingSpeed: 200,
+        dropSpeed: 500,
         colors: [
             { color: 0 }
         ],
