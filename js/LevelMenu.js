@@ -25,7 +25,7 @@ Game.LevelMenu.prototype = {
         this.clickAudio = this.game.add.audio('click');
 	},
     build: function () {
-        var nColumns = 6;
+        var nColumns = 10;
         var nRows = Math.round(this.nLevels / nColumns);
         var columnWidth = this.game.width / (nColumns + 1);
         var rowHeight = this.game.height / (nRows + 1);
@@ -35,7 +35,7 @@ Game.LevelMenu.prototype = {
         var text = this.game.add.text(0, 40, 'Level selector', style);
         text.x = this.game.width / 2 - text.width / 2;
 
-        var style = { font: '34px FontExtraBold, Helvetica', fill: '#fff', align: 'center' };
+        var style = { font: '24px FontExtraBold, Helvetica', fill: '#fff', align: 'center' };
         for (var i = 1; i <= this.nLevels; i++) {
             if (i <= this.maxLevel) {
                 var bitmap = this.game.make.bitmapData(128, 128);
@@ -49,6 +49,10 @@ Game.LevelMenu.prototype = {
                 var button = this.game.add.image(x, y, 'tube1');
                 var text = this.game.add.text(x, y, '?', style);
             }
+
+            button.height = 64;
+            button.width = 64;
+
             text.x -= text.width / 3;
             text.y += text.height / 10;
 

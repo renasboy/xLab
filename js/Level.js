@@ -115,36 +115,101 @@ Game.Level.prototype.levels = [
     {
         name: 'Level 1',
         maxTubeFill: 1,
-        drops: 5,
+        drops: 50,
         rollingSpeed: 100,
         dropSpeed: 500,
         colors: [
-            { color: 1 },
-            //{ color: 2 },
-            //{ color: 3 }
+            { color: 1 }
         ],
         tubes: [
             { type: 'tube1', x: 32 },
-            //{ type: 'tube2', x: 400 },
-            //{ type: 'tube3', x: 700 }
+            { type: 'tube2', x: 400 },
+            { type: 'tube3', x: 700 }
         ],
-        rats: [
-            { type: 'rat1', x: 200 },
-            { type: 'rat1', x: 550 },
-            { type: 'rat1', x: 650 },
-            { type: 'rat1', x: 150 }
-        ]
+        rats: []
     },
 
     {
         name: 'Level 2',
-        maxTubeFill: 2,
-        drops: 15,
+        maxTubeFill: 1,
+        drops: 50,
         rollingSpeed: 100,
         dropSpeed: 500,
         colors: [
+            { color: 2 }
+        ],
+        tubes: [
+            { type: 'tube1', x: 32 },
+            { type: 'tube2', x: 400 },
+            { type: 'tube3', x: 700 }
+        ],
+        rats: []
+    },
+
+    {
+        name: 'Level 3',
+        maxTubeFill: 1,
+        drops: 50,
+        rollingSpeed: 100,
+        dropSpeed: 500,
+        colors: [
+            { color: 1 },
             { color: 2 },
-            { color: 3 },
+            { color: 3 }
+        ],
+        tubes: [
+            { type: 'tube1', x: 32 },
+            { type: 'tube2', x: 400 },
+            { type: 'tube3', x: 700 }
+        ],
+        rats: []
+    },
+
+
+    {
+        name: 'Level 4',
+        maxTubeFill: 2,
+        drops: 50,
+        rollingSpeed: 100,
+        dropSpeed: 500,
+        colors: [
+            { color: 1 },
+            { color: 3 }
+        ],
+        tubes: [
+            { type: 'tube1', x: 32 },
+            { type: 'tube2', x: 400 },
+            { type: 'tube3', x: 700 }
+        ],
+        rats: []
+    }, 
+
+    {
+        name: 'Level 5',
+        maxTubeFill: 2,
+        drops: 50,
+        rollingSpeed: 100,
+        dropSpeed: 500,
+        colors: [
+            { color: 1 },
+            { color: 2 },
+            { color: 3 }
+        ],
+        tubes: [
+            { type: 'tube1', x: 32 },
+            { type: 'tube2', x: 400 },
+            { type: 'tube3', x: 700 }
+        ],
+        rats: []
+    }, 
+
+    {
+        name: 'Level 6',
+        maxTubeFill: 2,
+        drops: 50,
+        rollingSpeed: 100,
+        dropSpeed: 500,
+        colors: [
             { color: 4 }
         ],
         tubes: [
@@ -152,16 +217,85 @@ Game.Level.prototype.levels = [
             { type: 'tube2', x: 400 },
             { type: 'tube3', x: 700 }
         ],
-        rats: [
-            { type: 'rat1', x: 200 },
-            { type: 'rat1', x: 550 }
-        ]
+        rats: []
     },
 
     {
-        name: 'Level 3',
+        name: 'Level 7',
         maxTubeFill: 2,
-        drops: 10,
+        drops: 50,
+        rollingSpeed: 100,
+        dropSpeed: 500,
+        colors: [
+            { color: 5 }
+        ],
+        tubes: [
+            { type: 'tube1', x: 32 },
+            { type: 'tube2', x: 400 },
+            { type: 'tube3', x: 700 }
+        ],
+        rats: []
+    },
+
+    {
+        name: 'Level 8',
+        maxTubeFill: 2,
+        drops: 50,
+        rollingSpeed: 100,
+        dropSpeed: 500,
+        colors: [
+            { color: 6 }
+        ],
+        tubes: [
+            { type: 'tube1', x: 32 },
+            { type: 'tube2', x: 400 },
+            { type: 'tube3', x: 700 }
+        ],
+        rats: []
+    },
+
+    {
+        name: 'Level 9',
+        maxTubeFill: 2,
+        drops: 50,
+        rollingSpeed: 100,
+        dropSpeed: 500,
+        colors: [
+            { color: 4 },
+            { color: 5 },
+            { color: 6 }
+        ],
+        tubes: [
+            { type: 'tube1', x: 32 },
+            { type: 'tube2', x: 400 },
+            { type: 'tube3', x: 700 }
+        ],
+        rats: []
+    },
+
+    {
+        name: 'Level 10',
+        maxTubeFill: 2,
+        drops: 20,
+        rollingSpeed: 100,
+        dropSpeed: 500,
+        colors: [
+            { color: 1 },
+            { color: 2 },
+            { color: 6 }
+        ],
+        tubes: [
+            { type: 'tube1', x: 32 },
+            { type: 'tube2', x: 400 },
+            { type: 'tube3', x: 700 }
+        ],
+        rats: []
+    },
+
+    {
+        name: 'Level 11',
+        maxTubeFill: 2,
+        drops: 20,
         rollingSpeed: 100,
         dropSpeed: 500,
         colors: [
@@ -174,22 +308,170 @@ Game.Level.prototype.levels = [
             { type: 'tube2', x: 400 },
             { type: 'tube3', x: 700 }
         ],
-        rats: [
-            { type: 'rat1', x: 200 },
-            { type: 'rat1', x: 550 }
-        ]
+        rats: []
     },
 
+    {
+        name: 'Level 12',
+        maxTubeFill: 2,
+        drops: 20,
+        rollingSpeed: 100,
+        dropSpeed: 500,
+        colors: [
+            { color: 2 },
+            { color: 3 },
+            { color: 4 }
+        ],
+        tubes: [
+            { type: 'tube1', x: 32 },
+            { type: 'tube2', x: 400 },
+            { type: 'tube3', x: 700 }
+        ],
+        rats: []
+    },
 
     {
-        name: 'Level 4',
-        maxTubeFill: 2,
-        drops: 5,
+        name: 'Level 13',
+        maxTubeFill: 4,
+        drops: 20,
         rollingSpeed: 150,
         dropSpeed: 500,
         colors: [
             { color: 1 },
             { color: 2 },
+            { color: 3 }
+        ],
+        tubes: [
+            { type: 'tube1', x: 32 },
+            { type: 'tube2', x: 400 },
+            { type: 'tube3', x: 700 }
+        ],
+        rats: []
+    },
+
+    {
+        name: 'Level 14',
+        maxTubeFill: 4,
+        drops: 20,
+        rollingSpeed: 150,
+        dropSpeed: 500,
+        colors: [
+            { color: 4 },
+            { color: 5 },
+            { color: 6 }
+        ],
+        tubes: [
+            { type: 'tube1', x: 32 },
+            { type: 'tube2', x: 400 },
+            { type: 'tube3', x: 700 }
+        ],
+        rats: []
+    },
+
+    {
+        name: 'Level 15',
+        maxTubeFill: 4,
+        drops: 10,
+        rollingSpeed: 150,
+        dropSpeed: 500,
+        colors: [
+            { color: 1 },
+            { color: 5 },
+            { color: 4 }
+        ],
+        tubes: [
+            { type: 'tube1', x: 32 },
+            { type: 'tube2', x: 400 },
+            { type: 'tube3', x: 700 }
+        ],
+        rats: []
+    },
+
+    {
+        name: 'Level 16',
+        maxTubeFill: 4,
+        drops: 10,
+        rollingSpeed: 150,
+        dropSpeed: 500,
+        colors: [
+            { color: 2 },
+            { color: 6 },
+            { color: 5 }
+        ],
+        tubes: [
+            { type: 'tube1', x: 32 },
+            { type: 'tube2', x: 400 },
+            { type: 'tube3', x: 700 }
+        ],
+        rats: []
+    },
+
+    {
+        name: 'Level 17',
+        maxTubeFill: 4,
+        drops: 10,
+        rollingSpeed: 150,
+        dropSpeed: 500,
+        colors: [
+            { color: 1 },
+            { color: 5 },
+            { color: 6 }
+        ],
+        tubes: [
+            { type: 'tube1', x: 32 },
+            { type: 'tube2', x: 400 },
+            { type: 'tube3', x: 700 }
+        ],
+        rats: []
+    },
+
+    {
+        name: 'Level 18',
+        maxTubeFill: 4,
+        drops: 10,
+        rollingSpeed: 150,
+        dropSpeed: 500,
+        colors: [
+            { color: 3 },
+            { color: 4 },
+            { color: 5 }
+        ],
+        tubes: [
+            { type: 'tube1', x: 32 },
+            { type: 'tube2', x: 400 },
+            { type: 'tube3', x: 700 }
+        ],
+        rats: []
+    },
+
+    {
+        name: 'Level 19',
+        maxTubeFill: 4,
+        drops: 10,
+        rollingSpeed: 150,
+        dropSpeed: 500,
+        colors: [
+            { color: 2 },
+            { color: 4 },
+            { color: 6 }
+        ],
+        tubes: [
+            { type: 'tube1', x: 32 },
+            { type: 'tube2', x: 400 },
+            { type: 'tube3', x: 700 }
+        ],
+        rats: []
+    },
+
+    {
+        name: 'Level 20',
+        maxTubeFill: 4,
+        drops: 10,
+        rollingSpeed: 150,
+        dropSpeed: 500,
+        colors: [
+            { color: 4 },
+            { color: 5 },
             { color: 6 }
         ],
         tubes: [
@@ -201,18 +483,91 @@ Game.Level.prototype.levels = [
             { type: 'rat1', x: 200 },
             { type: 'rat1', x: 550 }
         ]
-    }, 
+    },
 
     {
-        name: 'Level 5',
-        maxTubeFill: 4,
-        drops: 15,
+        name: 'Level 21',
+        maxTubeFill: 3,
+        drops: 10,
         rollingSpeed: 150,
         dropSpeed: 500,
         colors: [
-            { color: 4 },
+            { color: 12 },
+            { color: 11 }
+        ],
+        tubes: [
+            { type: 'tube1', x: 32 },
+            { type: 'tube2', x: 400 },
+            { type: 'tube3', x: 700 }
+        ],
+        rats: []
+    },
+
+    {
+        name: 'Level 22',
+        maxTubeFill: 3,
+        drops: 10,
+        rollingSpeed: 150,
+        dropSpeed: 500,
+        colors: [
+            { color: 9 },
+            { color: 10 }
+        ],
+        tubes: [
+            { type: 'tube1', x: 32 },
+            { type: 'tube2', x: 400 },
+            { type: 'tube3', x: 700 }
+        ],
+        rats: []
+    },
+
+    {
+        name: 'Level 23',
+        maxTubeFill: 3,
+        drops: 10,
+        rollingSpeed: 150,
+        dropSpeed: 500,
+        colors: [
             { color: 7 },
             { color: 8 }
+        ],
+        tubes: [
+            { type: 'tube1', x: 32 },
+            { type: 'tube2', x: 400 },
+            { type: 'tube3', x: 700 }
+        ],
+        rats: []
+    },
+
+    {
+        name: 'Level 24',
+        maxTubeFill: 3,
+        drops: 10,
+        rollingSpeed: 150,
+        dropSpeed: 500,
+        colors: [
+            { color: 1 },
+            { color: 10 },
+            { color: 9 }
+        ],
+        tubes: [
+            { type: 'tube1', x: 32 },
+            { type: 'tube2', x: 400 },
+            { type: 'tube3', x: 700 }
+        ],
+        rats: []
+    },
+
+    {
+        name: 'Level 25',
+        maxTubeFill: 3,
+        drops: 10,
+        rollingSpeed: 150,
+        dropSpeed: 500,
+        colors: [
+            { color: 7 },
+            { color: 8 },
+            { color: 9 }
         ],
         tubes: [
             { type: 'tube1', x: 32 },
@@ -223,16 +578,16 @@ Game.Level.prototype.levels = [
             { type: 'rat1', x: 200 },
             { type: 'rat1', x: 550 }
         ]
-    }, 
+    },
 
     {
-        name: 'Level 6',
-        maxTubeFill: 4,
-        drops: 20,
+        name: 'Level 26',
+        maxTubeFill: 3,
+        drops: 10,
         rollingSpeed: 150,
         dropSpeed: 500,
         colors: [
-            { color: 6 },
+            { color: 10 },
             { color: 11 },
             { color: 12 }
         ],
@@ -248,13 +603,189 @@ Game.Level.prototype.levels = [
     },
 
     {
-        name: 'Level 7',
-        maxTubeFill: 4,
-        drops: 15,
-        rollingSpeed: 200,
+        name: 'Level 27',
+        maxTubeFill: 3,
+        drops: 10,
+        rollingSpeed: 150,
         dropSpeed: 500,
         colors: [
-            { color: 5 },
+            { color: 7 },
+            { color: 9 },
+            { color: 11 }
+        ],
+        tubes: [
+            { type: 'tube1', x: 32 },
+            { type: 'tube2', x: 400 },
+            { type: 'tube3', x: 700 }
+        ],
+        rats: [
+            { type: 'rat1', x: 200 },
+            { type: 'rat1', x: 550 }
+        ]
+    },
+
+    {
+        name: 'Level 28',
+        maxTubeFill: 3,
+        drops: 10,
+        rollingSpeed: 150,
+        dropSpeed: 500,
+        colors: [
+            { color: 8 },
+            { color: 10 },
+            { color: 12 }
+        ],
+        tubes: [
+            { type: 'tube1', x: 32 },
+            { type: 'tube2', x: 400 },
+            { type: 'tube3', x: 700 }
+        ],
+        rats: [
+            { type: 'rat1', x: 200 },
+            { type: 'rat1', x: 550 }
+        ]
+    },
+
+    {
+        name: 'Level 29',
+        maxTubeFill: 3,
+        drops: 10,
+        rollingSpeed: 150,
+        dropSpeed: 500,
+        colors: [
+            { color: 3 },
+            { color: 7 },
+            { color: 9 }
+        ],
+        tubes: [
+            { type: 'tube1', x: 32 },
+            { type: 'tube2', x: 400 },
+            { type: 'tube3', x: 700 }
+        ],
+        rats: [
+            { type: 'rat1', x: 200 },
+            { type: 'rat1', x: 550 }
+        ]
+    },
+
+    {
+        name: 'Level 30',
+        maxTubeFill: 3,
+        drops: 6,
+        rollingSpeed: 150,
+        dropSpeed: 500,
+        colors: [
+            { color: 1 },
+            { color: 10 },
+            { color: 12 }
+        ],
+        tubes: [
+            { type: 'tube1', x: 32 },
+            { type: 'tube2', x: 400 },
+            { type: 'tube3', x: 700 }
+        ],
+        rats: [
+            { type: 'rat1', x: 200 },
+            { type: 'rat1', x: 550 }
+        ]
+    },
+
+    {
+        name: 'Level 31',
+        maxTubeFill: 3,
+        drops: 6,
+        rollingSpeed: 150,
+        dropSpeed: 500,
+        colors: [
+            { color: 2 },
+            { color: 7 },
+            { color: 12 }
+        ],
+        tubes: [
+            { type: 'tube1', x: 32 },
+            { type: 'tube2', x: 400 },
+            { type: 'tube3', x: 700 }
+        ],
+        rats: [
+            { type: 'rat1', x: 200 },
+            { type: 'rat1', x: 550 }
+        ]
+    },
+
+    {
+        name: 'Level 32',
+        maxTubeFill: 3,
+        drops: 6,
+        rollingSpeed: 150,
+        dropSpeed: 500,
+        colors: [
+            { color: 3 },
+            { color: 8 },
+            { color: 9 }
+        ],
+        tubes: [
+            { type: 'tube1', x: 32 },
+            { type: 'tube2', x: 400 },
+            { type: 'tube3', x: 700 }
+        ],
+        rats: [
+            { type: 'rat1', x: 200 },
+            { type: 'rat1', x: 550 }
+        ]
+    },
+
+    {
+        name: 'Level 33',
+        maxTubeFill: 3,
+        drops: 6,
+        rollingSpeed: 150,
+        dropSpeed: 400,
+        colors: [
+            { color: 7 },
+            { color: 11 },
+            { color: 12 }
+        ],
+        tubes: [
+            { type: 'tube1', x: 32 },
+            { type: 'tube2', x: 400 },
+            { type: 'tube3', x: 700 }
+        ],
+        rats: [
+            { type: 'rat1', x: 200 },
+            { type: 'rat1', x: 550 }
+        ]
+    },
+
+    {
+        name: 'Level 34',
+        maxTubeFill: 3,
+        drops: 6,
+        rollingSpeed: 150,
+        dropSpeed: 400,
+        colors: [
+            { color: 8 },
+            { color: 10 },
+            { color: 11 }
+        ],
+        tubes: [
+            { type: 'tube1', x: 32 },
+            { type: 'tube2', x: 400 },
+            { type: 'tube3', x: 700 }
+        ],
+        rats: [
+            { type: 'rat1', x: 200 },
+            { type: 'rat1', x: 550 }
+        ]
+    },
+
+    {
+        name: 'Level 35',
+        maxTubeFill: 3,
+        drops: 6,
+        rollingSpeed: 150,
+        dropSpeed: 400,
+        colors: [
+            { color: 7 },
             { color: 9 },
             { color: 10 }
         ],
@@ -270,59 +801,15 @@ Game.Level.prototype.levels = [
     },
 
     {
-        name: 'Level 8',
-        maxTubeFill: 4,
-        drops: 10,
+        name: 'Level 36',
+        maxTubeFill: 3,
+        drops: 6,
         rollingSpeed: 200,
-        dropSpeed: 500,
-        colors: [
-            { color: 4 },
-            { color: 5 },
-            { color: 6 }
-        ],
-        tubes: [
-            { type: 'tube1', x: 32 },
-            { type: 'tube2', x: 400 },
-            { type: 'tube3', x: 700 }
-        ],
-        rats: [
-            { type: 'rat1', x: 200 },
-            { type: 'rat1', x: 550 }
-        ]
-    },
-
-    {
-        name: 'Level 9',
-        maxTubeFill: 4,
-        drops: 20,
-        rollingSpeed: 200,
-        dropSpeed: 500,
+        dropSpeed: 400,
         colors: [
             { color: 7 },
-            { color: 9 },
-            { color: 11 },
-        ],
-        tubes: [
-            { type: 'tube1', x: 32 },
-            { type: 'tube2', x: 400 },
-            { type: 'tube3', x: 700 }
-        ],
-        rats: [
-            { type: 'rat1', x: 200 },
-            { type: 'rat1', x: 550 }
-        ]
-    },
-
-    {
-        name: 'Level 10',
-        maxTubeFill: 4,
-        drops: 15,
-        rollingSpeed: 250,
-        dropSpeed: 500,
-        colors: [
             { color: 8 },
-            { color: 10 },
-            { color: 12 },
+            { color: 9 }
         ],
         tubes: [
             { type: 'tube1', x: 32 },
@@ -336,11 +823,33 @@ Game.Level.prototype.levels = [
     },
 
     {
-        name: 'Level 11',
-        maxTubeFill: 4,
-        drops: 10,
-        rollingSpeed: 250,
-        dropSpeed: 500,
+        name: 'Level 37',
+        maxTubeFill: 3,
+        drops: 6,
+        rollingSpeed: 200,
+        dropSpeed: 400,
+        colors: [
+            { color: 10 },
+            { color: 11 },
+            { color: 12 }
+        ],
+        tubes: [
+            { type: 'tube1', x: 32 },
+            { type: 'tube2', x: 400 },
+            { type: 'tube3', x: 700 }
+        ],
+        rats: [
+            { type: 'rat1', x: 200 },
+            { type: 'rat1', x: 550 }
+        ]
+    },
+
+    {
+        name: 'Level 38',
+        maxTubeFill: 3,
+        drops: 6,
+        rollingSpeed: 200,
+        dropSpeed: 300,
         colors: [
             { color: 1 },
             { color: 2 },
@@ -358,13 +867,15 @@ Game.Level.prototype.levels = [
     },
 
     {
-        name: 'Level 12',
+        name: 'Level 39',
         maxTubeFill: 3,
-        drops: 5,
+        drops: 6,
         rollingSpeed: 200,
-        dropSpeed: 500,
+        dropSpeed: 300,
         colors: [
-            { color: 0 }
+            { color: 7 },
+            { color: 8 },
+            { color: 9 }
         ],
         tubes: [
             { type: 'tube1', x: 32 },
@@ -374,6 +885,250 @@ Game.Level.prototype.levels = [
         rats: [
             { type: 'rat1', x: 200 },
             { type: 'rat1', x: 550 }
+        ]
+    },
+
+    {
+        name: 'Level 40',
+        maxTubeFill: 3,
+        drops: 6,
+        rollingSpeed: 200,
+        dropSpeed: 300,
+        colors: [
+            { color: 10 },
+            { color: 11 },
+            { color: 12 }
+        ],
+        tubes: [
+            { type: 'tube1', x: 32 },
+            { type: 'tube2', x: 400 },
+            { type: 'tube3', x: 700 }
+        ],
+        rats: [
+            { type: 'rat1', x: 200 },
+            { type: 'rat1', x: 550 }
+        ]
+    },
+
+    {
+        name: 'Level 41',
+        maxTubeFill: 3,
+        drops: 6,
+        rollingSpeed: 250,
+        dropSpeed: 300,
+        colors: [
+            { color: 1 },
+            { color: 2 },
+            { color: 3 }
+        ],
+        tubes: [
+            { type: 'tube1', x: 32 },
+            { type: 'tube2', x: 400 },
+            { type: 'tube3', x: 700 }
+        ],
+        rats: [
+            { type: 'rat1', x: 200 },
+            { type: 'rat1', x: 550 }
+        ]
+    },
+
+    {
+        name: 'Level 42',
+        maxTubeFill: 3,
+        drops: 6,
+        rollingSpeed: 250,
+        dropSpeed: 300,
+        colors: [
+            { color: 7 },
+            { color: 10 },
+            { color: 11 }
+        ],
+        tubes: [
+            { type: 'tube1', x: 32 },
+            { type: 'tube2', x: 400 },
+            { type: 'tube3', x: 700 }
+        ],
+        rats: [
+            { type: 'rat1', x: 200 },
+            { type: 'rat1', x: 550 }
+        ]
+    },
+
+    {
+        name: 'Level 43',
+        maxTubeFill: 3,
+        drops: 6,
+        rollingSpeed: 250,
+        dropSpeed: 300,
+        colors: [
+            { color: 1 },
+            { color: 9 },
+            { color: 11 }
+        ],
+        tubes: [
+            { type: 'tube1', x: 32 },
+            { type: 'tube2', x: 400 },
+            { type: 'tube3', x: 700 }
+        ],
+        rats: [
+            { type: 'rat1', x: 200 },
+            { type: 'rat1', x: 550 }
+        ]
+    },
+
+    {
+        name: 'Level 44',
+        maxTubeFill: 3,
+        drops: 6,
+        rollingSpeed: 250,
+        dropSpeed: 300,
+        colors: [
+            { color: 2 },
+            { color: 8 },
+            { color: 12 }
+        ],
+        tubes: [
+            { type: 'tube1', x: 32 },
+            { type: 'tube2', x: 400 },
+            { type: 'tube3', x: 700 }
+        ],
+        rats: [
+            { type: 'rat1', x: 200 },
+            { type: 'rat1', x: 550 }
+        ]
+    },
+
+    {
+        name: 'Level 45',
+        maxTubeFill: 3,
+        drops: 6,
+        rollingSpeed: 250,
+        dropSpeed: 300,
+        colors: [
+            { color: 3 },
+            { color: 7 },
+            { color: 10 }
+        ],
+        tubes: [
+            { type: 'tube1', x: 32 },
+            { type: 'tube2', x: 400 },
+            { type: 'tube3', x: 700 }
+        ],
+        rats: [
+            { type: 'rat1', x: 200 },
+            { type: 'rat1', x: 550 }
+        ]
+    },
+
+    {
+        name: 'Level 46',
+        maxTubeFill: 3,
+        drops: 6,
+        rollingSpeed: 250,
+        dropSpeed: 300,
+        colors: [
+            { color: 7 },
+            { color: 8 },
+            { color: 10 }
+        ],
+        tubes: [
+            { type: 'tube1', x: 32 },
+            { type: 'tube2', x: 400 },
+            { type: 'tube3', x: 700 }
+        ],
+        rats: [
+            { type: 'rat1', x: 200 },
+            { type: 'rat1', x: 550 }
+        ]
+    },
+
+    {
+        name: 'Level 47',
+        maxTubeFill: 3,
+        drops: 6,
+        rollingSpeed: 300,
+        dropSpeed: 300,
+        colors: [
+            { color: 1 },
+            { color: 2 },
+            { color: 3 }
+        ],
+        tubes: [
+            { type: 'tube1', x: 32 },
+            { type: 'tube2', x: 400 },
+            { type: 'tube3', x: 700 }
+        ],
+        rats: [
+            { type: 'rat1', x: 200 },
+            { type: 'rat1', x: 550 }
+        ]
+    },
+
+    {
+        name: 'Level 48',
+        maxTubeFill: 3,
+        drops: 6,
+        rollingSpeed: 300,
+        dropSpeed: 300,
+        colors: [
+            { color: 8 },
+            { color: 9 },
+            { color: 10 }
+        ],
+        tubes: [
+            { type: 'tube1', x: 32 },
+            { type: 'tube2', x: 400 },
+            { type: 'tube3', x: 700 }
+        ],
+        rats: [
+            { type: 'rat1', x: 200 },
+            { type: 'rat1', x: 550 }
+        ]
+    },
+
+    {
+        name: 'Level 49',
+        maxTubeFill: 3,
+        drops: 6,
+        rollingSpeed: 300,
+        dropSpeed: 300,
+        colors: [
+            { color: 7 },
+            { color: 11 },
+            { color: 12 }
+        ],
+        tubes: [
+            { type: 'tube1', x: 32 },
+            { type: 'tube2', x: 400 },
+            { type: 'tube3', x: 700 }
+        ],
+        rats: [
+            { type: 'rat1', x: 200 },
+            { type: 'rat1', x: 550 }
+        ]
+    },
+
+    {
+        name: 'Level 50',
+        maxTubeFill: 3,
+        drops: 3,
+        rollingSpeed: 350,
+        dropSpeed: 200,
+        colors: [
+            { color: 0 },
+            { color: 0 },
+            { color: 0 }
+        ],
+        tubes: [
+            { type: 'tube1', x: 32 },
+            { type: 'tube2', x: 400 },
+            { type: 'tube3', x: 700 }
+        ],
+        rats: [
+            { type: 'rat1', x: 200 },
+            { type: 'rat1', x: 550 },
+            { type: 'rat1', x: 700 },
+            { type: 'rat1', x: 800 }
         ]
     }
 ];
